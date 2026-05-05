@@ -398,9 +398,10 @@ function showResult(correct, isReplay = false) {
 
 function resetGame() {
     document.getElementById('result-screen').style.display = 'none';
+
     if (gameMode === 'daily') {
-        document.getElementById('start-screen').style.display = 'block';
-        checkDailyStatus();
+        gameMode = 'infinite'; // update mode
+        startInfinite();
     } else {
         startInfinite();
     }

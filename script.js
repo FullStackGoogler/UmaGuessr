@@ -366,6 +366,9 @@ function showResult(correct, isReplay = false) {
         ? `<div class="result-countdown">
             <div class="result-countdown-label">Next daily in</div>
             <div class="countdown-val result-countdown-val">--:--:--</div>
+           </div>
+           <div style="text-align:center; padding: 0.75rem 1.5rem 1.25rem;">
+                <button id="share-btn" onclick="shareResult()" class="btn-share">Share</button>
            </div>`
         : '';
 
@@ -393,6 +396,37 @@ function showResult(correct, isReplay = false) {
         playAgainBtn.textContent = 'Play Infinite Mode';
     } else {
         playAgainBtn.textContent = 'Play Again';
+    }
+}
+
+function generateShareText() {
+    const date = getTodayKeyEST().split('-').reverse().join('/').replace(/(\d+)\/(\d+)\/(\d+)/, '$2/$1/$3');
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const unused = isDark ? '⚫' : '⚪';
+
+    let emojiRow = '';
+    if (lastWonAttempt === -1) { // Failed — all yellow
+        emojiRow = '🟡'.repeat(MAX_ATTEMPTS);
+    } else {
+        const usedAttempts = lastWonAttempt - 1; // wrong guesses before correct
+        emojiRow += '🟡'.repeat(usedAttempts);   // wrong/skipped
+        emojiRow += '🟢';                          // correct
+        emojiRow += unused.repeat(MAX_ATTEMPTS - lastWonAttempt); // unused
+    }
+
+    return `UmaGuessr ${date}\n🐎 ${emojiRow}\n\nhttps://fullstackgoogler.github.io/UmaGuessr/`;
+}
+
+async function shareResult() {
+    const text = generateShareText();
+    try {
+        await navigator.clipboard.writeText(text);
+        const btn = document.getElementById('share-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Share', 2000);
+    } catch (e) {
+        // Fallback for browsers that block clipboard
+        prompt('Copy this to share:', text);
     }
 }
 

@@ -464,6 +464,21 @@ audio {
     color: var(--text);
 }
 
+.btn-share {
+    background: var(--pink);
+    color: white;
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 999px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-share:hover { background: var(--pink-dark); }
+
 /* PROGRESS DOTS */
 .progress-dots {
     display: flex;

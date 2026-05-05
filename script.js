@@ -410,7 +410,7 @@ function generateShareText() {
     } else {
         const usedAttempts = lastWonAttempt - 1; // wrong guesses before correct
         emojiRow += '🟡'.repeat(usedAttempts);   // wrong/skipped
-        emojiRow += '🟢';                          // correct
+        emojiRow += '🟢';                        // correct
         emojiRow += unused.repeat(MAX_ATTEMPTS - lastWonAttempt); // unused
     }
 

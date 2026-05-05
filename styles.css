@@ -340,6 +340,9 @@ audio {
 .blurred-img-wrap img {
     width: 100%;
     height: auto;
+    max-height: 900px;
+    object-fit: cover;
+    object-position: center bottom;
     filter: blur(var(--blur-amount)) brightness(0.85);
     display: block;
 }
@@ -607,6 +610,9 @@ audio {
 .reveal-img {
     width: 100%;
     display: block;
+    max-height: 1000px;
+    object-fit: cover;
+    object-position: center bottom;
 }
 
 /* RESULT COUNTDOWN */

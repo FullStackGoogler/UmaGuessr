@@ -583,6 +583,18 @@ function handleHelpBackdropClick(e) {
     if (e.target === document.getElementById('howto-modal')) closeHelp();
 }
 
+function openUpdates() {
+    document.getElementById('updates-modal').classList.add('open');
+}
+
+function closeUpdates() {
+    document.getElementById('updates-modal').classList.remove('open');
+}
+
+function handleUpdateBackdropClick(e) {
+    if (e.target === document.getElementById('updates-modal')) closeUpdates();
+}
+
 function goHome() {
     document.getElementById('game-screen').style.display = 'none';
     document.getElementById('result-screen').style.display = 'none';

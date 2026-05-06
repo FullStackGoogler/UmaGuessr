@@ -17,6 +17,7 @@
   <div class="header-actions">
     <button class="btn-theme" id="theme-btn" onclick="toggleTheme()">🌑</button>
     <button class="header-btn" onclick="openHelp()">?</button>
+    <button class="header-btn" onclick="openUpdates()">🛠️</button>
     <button class="header-btn" onclick="openStats()">Stats</button>
   </div>
 </header>
@@ -32,13 +33,24 @@
          additional bit of information about the Uma.
       </p>
       <br>
-      <p>NPCs and/or unreleased Uma Musume are not included. Some Umas may also only have 
-         their hints in Japanese at the moment. Some Umas are also not included because 
-         they are missing bits of information, which I will try and slowly add in!
+      <p>NPCs and/or unreleased Uma Musume are not included. Some Umas are not included
+         because they don't have English translations for all their hints, which I will
+         work towards translating and adding in!
       </p>
       <br>
       <p><strong>Note:</strong> Only dailies count towards the Stats, and are stored locally.</p>
     </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="updates-modal" onclick="handleUpdateBackdropClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeUpdates()">&#x2715;</button>
+    <h2>Updates</h2>
+    <br>
+    <hr>
+    <br>
+    <p><strong>05/05/2026:</strong> UmaGuessr has been released!</p>
   </div>
 </div>
 

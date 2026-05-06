@@ -414,7 +414,7 @@ function generateShareText() {
         emojiRow += unused.repeat(MAX_ATTEMPTS - lastWonAttempt); // unused
     }
 
-    return `UmaGuessr ${date}\n🐎 ${emojiRow}\n\nhttps://fullstackgoogler.github.io/UmaGuessr/`;
+    return `UmaGuessr ${date}\n🐎 ${emojiRow}\n\nhttps://umaguessr.com`;
 }
 
 async function shareResult() {

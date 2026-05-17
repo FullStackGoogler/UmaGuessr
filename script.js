@@ -383,7 +383,7 @@ function showResult(correct, isReplay = false) {
             <div class="countdown-val result-countdown-val">--:--:--</div>
            </div>
            <div style="text-align:center; padding: 0.75rem 1.5rem 1.25rem;">
-                <button id="share-btn" onclick="shareResult()" class="btn-share">Share</button>
+                <button id="share-btn" class="btn-share">Share</button>
            </div>`
         : '';
 
@@ -405,6 +405,9 @@ function showResult(correct, isReplay = false) {
     <div class="hints-summary">${hintsHTML}</div>
     ${countdownHTML}
   `;
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) shareBtn.addEventListener('click', shareResult);
 
     const playAgainBtn = document.getElementById('play-again-btn');
     if (gameMode === 'daily') {

@@ -2,3 +2,5 @@ venv/
 misc-data/
 scripts/
 .DS_Store
+node_modules/
+dist/

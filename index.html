@@ -11,20 +11,20 @@
 <body>
 
 <header>
-  <h1 onclick="goHome()" style="cursor:pointer;">Uma<span>Guessr</span></h1>
+  <h1 id="home-title" style="cursor:pointer;">Uma<span>Guessr</span></h1>
   <p>Guess the Uma Musume from the clues</p>
   <div class="header-countdown">Next daily in <span class="countdown-val">--:--:--</span></div>
   <div class="header-actions">
-    <button class="btn-theme" id="theme-btn" onclick="toggleTheme()">🌑</button>
-    <button class="header-btn" onclick="openHelp()">?</button>
-    <button class="header-btn" onclick="openUpdates()">🛠️</button>
-    <button class="header-btn" onclick="openStats()">Stats</button>
+    <button class="btn-theme" id="theme-btn">🌑</button>
+    <button class="header-btn" id="help-btn">?</button>
+    <button class="header-btn" id="updates-btn">🛠️</button>
+    <button class="header-btn" id="stats-btn">Stats</button>
   </div>
 </header>
 
-<div class="modal-backdrop" id="howto-modal" onclick="handleHelpBackdropClick(event)">
+<div class="modal-backdrop" id="howto-modal">
   <div class="modal">
-    <button class="modal-close" onclick="closeHelp()">&#x2715;</button>
+    <button class="modal-close" id="close-help-btn">&#x2715;</button>
     <h2>How to Play</h2>
 
     <div class="howto-content">
@@ -41,9 +41,9 @@
   </div>
 </div>
 
-<div class="modal-backdrop" id="updates-modal" onclick="handleUpdateBackdropClick(event)">
+<div class="modal-backdrop" id="updates-modal">
   <div class="modal">
-    <button class="modal-close" onclick="closeUpdates()">&#x2715;</button>
+    <button class="modal-close" id="close-updates-btn">&#x2715;</button>
     <h2>Updates</h2>
     <br>
     <hr>
@@ -57,9 +57,9 @@
   </div>
 </div>
 
-<div class="modal-backdrop" id="stats-modal" onclick="handleBackdropClick(event)">
+<div class="modal-backdrop" id="stats-modal">
   <div class="modal">
-    <button class="modal-close" onclick="closeStats()">&#x2715;</button>
+    <button class="modal-close" id="close-stats-btn">&#x2715;</button>
     <h2>Statistics</h2>
     <div id="stats-content"></div>
   </div>
@@ -76,8 +76,8 @@
     <h2>Can you guess the Uma Musume?</h2>
     <br>
     <div class="mode-buttons">
-      <button class="btn-daily" id="daily-btn" onclick="startDaily()">📅 Daily</button>
-      <button class="btn-infinite" onclick="startInfinite()">∞ Infinite Mode</button>
+      <button class="btn-daily" id="daily-btn">📅 Daily</button>
+      <button class="btn-infinite" id="infinite-btn">∞ Infinite Mode</button>
     </div>
   </div>
 
@@ -95,8 +95,8 @@
         <div class="autocomplete-list" id="autocomplete-list"></div>
       </div>
       <div class="guess-actions">
-        <button class="btn-guess" onclick="submitGuess()">Guess</button>
-        <button class="btn-skip" onclick="skipAttempt()">Skip</button>
+        <button class="btn-guess" id="guess-btn">Guess</button>
+        <button class="btn-skip" id="skip-btn">Skip</button>
       </div>
       <div class="wrong-guesses" id="wrong-guesses"></div>
     </div>
@@ -106,13 +106,13 @@
   <div id="result-screen">
     <div class="result-card" id="result-card"></div>
     <div class="play-again-wrap">
-      <button class="btn-primary" id="play-again-btn" onclick="resetGame()">Play Again</button>
+      <button class="btn-primary" id="play-again-btn">Play Again</button>
     </div>
   </div>
 
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 <footer>
   <p>UmaGuessr is an unofficial fan project, not affiliated with Cygames.</p>

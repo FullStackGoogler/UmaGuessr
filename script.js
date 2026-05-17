@@ -14,8 +14,8 @@ async function loadData() {
     initTheme();
     try {
         const [infoRes, imgRes] = await Promise.all([
-            fetch('assets/data/characterInfos.json'),
-            fetch('assets/data/characterImages.json')
+            fetch('/assets/data/characterInfos.json'),
+            fetch('/assets/data/characterImages.json')
         ]);
         allChars = await infoRes.json();
         allImages = await imgRes.json();
@@ -695,3 +695,26 @@ function renderStats() {
 let lastWonAttempt = -1;
 
 loadData();
+
+// Event listeners
+document.getElementById('home-title').addEventListener('click', goHome);
+document.getElementById('theme-btn').addEventListener('click', toggleTheme);
+document.getElementById('help-btn').addEventListener('click', openHelp);
+document.getElementById('updates-btn').addEventListener('click', openUpdates);
+document.getElementById('stats-btn').addEventListener('click', openStats);
+
+document.getElementById('close-help-btn').addEventListener('click', closeHelp);
+document.getElementById('close-updates-btn').addEventListener('click', closeUpdates);
+document.getElementById('close-stats-btn').addEventListener('click', closeStats);
+
+document.getElementById('howto-modal').addEventListener('click', handleHelpBackdropClick);
+document.getElementById('updates-modal').addEventListener('click', handleUpdateBackdropClick);
+document.getElementById('stats-modal').addEventListener('click', handleBackdropClick);
+
+document.getElementById('daily-btn').addEventListener('click', startDaily);
+document.getElementById('infinite-btn').addEventListener('click', startInfinite);
+
+document.getElementById('guess-btn').addEventListener('click', submitGuess);
+document.getElementById('skip-btn').addEventListener('click', skipAttempt);
+
+document.getElementById('play-again-btn').addEventListener('click', resetGame);

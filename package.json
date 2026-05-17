@@ -1,0 +1,27 @@
+{
+  "name": "umaguessr",
+  "version": "1.0.0",
+  "description": "An Uma Musume themed daily game where the goal is to guess the Uma Musume from the given hints.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FullStackGoogler/UmaGuessr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FullStackGoogler/UmaGuessr/issues"
+  },
+  "homepage": "https://github.com/FullStackGoogler/UmaGuessr#readme",
+  "devDependencies": {
+    "vite": "^8.0.13"
+  }
+}

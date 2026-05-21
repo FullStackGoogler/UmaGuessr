@@ -1,7 +1,4 @@
-import {
-    getTodayKeyEST, startCountdownTick,
-    seededShuffle, normalize, buildEmojiRow
-} from '../shared/script.js';
+import { getTodayKeyEST, seededShuffle, normalize, buildEmojiRow } from '../shared/script.js';
 import { initTopbar } from '../shared/topbar.js';
 import { initFooter } from '../shared/footer.js';
 

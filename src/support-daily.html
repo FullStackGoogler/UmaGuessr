@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UmaGuessr – Support Card Daily</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/styles.css">
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+<header></header>
+
+<div class="container">
+  <div id="loading" class="loading-msg">Loading support card data…</div>
+  <div id="error" class="error-msg" style="display:none"></div>
+
+  <div id="game-screen" style="display:none">
+    <div class="mode-badge support-badge" id="mode-badge">🃏 Support Card Daily</div>
+    <br>
+    <div class="card-image-wrap">
+      <img id="card-image" src="" alt="Support Card" class="card-image" />
+    </div>
+    <div class="guess-section" id="guess-section">
+      <div class="progress-dots" id="progress-dots"></div>
+      <label>Your guess</label>
+      <div class="guess-wrap">
+        <input type="text" id="guess-input" placeholder="Type a support card name…" autocomplete="off" />
+        <div class="autocomplete-list" id="autocomplete-list"></div>
+      </div>
+      <div class="guess-actions">
+        <button class="btn-guess" id="guess-btn">Guess</button>
+        <button class="btn-skip" id="skip-btn">Skip</button>
+      </div>
+      <div class="wrong-guesses" id="wrong-guesses"></div>
+    </div>
+  </div>
+
+  <div id="result-screen" style="display:none">
+    <div class="result-card" id="result-card"></div>
+  </div>
+</div>
+
+<script type="module" src="./js/support-daily.js"></script>
+
+<footer></footer>
+
+</body>
+</html>

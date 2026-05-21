@@ -1,0 +1,31 @@
+[
+    {
+        "version": "1.2",
+        "date": "2026-99-99",
+        "changes": [
+            "stuf",
+            "stuf"
+        ]
+    },
+    {
+        "version": "1.1",
+        "date": "2026-05-17",
+        "changes": [
+            "Overhauled the daily algorithm and the backend!"
+        ]
+    },
+    {
+        "version": "1.0.1",
+        "date": "2026-05-07",
+        "changes": [
+            "Added 19 new Uma Musume: Admire Groove, Almond Eye, Believe, Buena Vista, Chrono Genesis, Dantsu Flame, Espoir City, Fenomeno, Fusaichi Pandora, Gran Alegria, Kiseki, Loves Only You, Lucky Lilac, No Reason, Royce and Royce, Stay Gold, Still in Love, Verxina, Victoire Pisa"
+        ]
+    },
+    {
+        "version": "1.0",
+        "date": "2026-05-05",
+        "changes": [
+            "UmaGuessr has been released!"
+        ]
+    }
+]

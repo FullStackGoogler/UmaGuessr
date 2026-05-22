@@ -18,9 +18,12 @@
   <div id="game-screen" style="display:none">
     <div class="mode-badge support-badge" id="mode-badge">🃏 Support Card Daily</div>
     <br>
-    <div class="card-image-wrap">
-      <img id="card-image" src="" alt="Support Card" class="card-image" />
+    <div class="card-canvas-wrap">
+      <canvas id="card-canvas"></canvas>
     </div>
+
+    <div id="hints-container"></div>
+    
     <div class="guess-section" id="guess-section">
       <div class="progress-dots" id="progress-dots"></div>
       <label>Your guess</label>
@@ -28,6 +31,7 @@
         <input type="text" id="guess-input" placeholder="Type a support card name…" autocomplete="off" />
         <div class="autocomplete-list" id="autocomplete-list"></div>
       </div>
+      <div class="guess-feedback" id="guess-feedback"></div>
       <div class="guess-actions">
         <button class="btn-guess" id="guess-btn">Guess</button>
         <button class="btn-skip" id="skip-btn">Skip</button>

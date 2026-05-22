@@ -325,26 +325,6 @@ footer a:hover {
     display: none;
 }
 
-/* SUPPORT CARD IMAGE */
-.card-image-wrap {
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 1.25rem;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 200px;
-}
-
-.card-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 16px;
-}
-
 /* Result card image */
 .result-card-img-wrap {
     padding: 1rem 1.5rem;
@@ -356,8 +336,10 @@ footer a:hover {
 .reveal-card-img {
     max-width: 320px;
     width: 100%;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    display: block;
 }
 
 .result-card-name {
@@ -1102,4 +1084,66 @@ audio {
     color: var(--text);
     line-height: 1.5;
     padding-left: 0.25rem;
+}
+
+/* ─── SUPPORT CARD CANVAS ────────────────────────────────────────────────── */
+
+.card-canvas-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-canvas-wrap canvas {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* ─── GUESS FEEDBACK ─────────────────────────────────────────────────────── */
+
+.guess-feedback {
+    font-size: 0.82rem;
+    color: #c0393b;
+    min-height: 1.2rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.1rem;
+}
+
+/* ─── RESULT CARD META ───────────────────────────────────────────────────── */
+
+.result-card-meta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* ─── SUPPORT CARD HINTS ─────────────────────────────────────────────────── */
+
+.hints-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hint-locked {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.88rem;
+}
+
+.hint-img {
+    height: 32px;
+    width: auto;
+    display: block;
+    margin-top: 0.25rem;
 }

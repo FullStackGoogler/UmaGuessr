@@ -10,6 +10,7 @@ let currentChar = null;
 let currentImages = null;
 let attempt = 0;
 let selectedGuess = '';
+let wrongGuesses = new Set();
 let gameMode = null; // 'daily' | 'infinite'
 let umaDailyComplete = false;
 let lastWonAttempt = -1;
@@ -33,6 +34,7 @@ async function loadData() {
         checkUmaDailyStatus();
         autoStart();
     } catch (e) {
+        console.log(e);
         document.getElementById('loading').style.display = 'none';
         document.getElementById('error').style.display = 'block';
         document.getElementById('error').textContent = 'Could not load character data.';
@@ -105,6 +107,7 @@ function startInfinite() {
 function beginGame() {
     attempt = 0;
     selectedGuess = '';
+    wrongGuesses = new Set();
     const imgEntry = allImages.find(x => x.web_id === currentChar.id);
     currentImages = imgEntry ? imgEntry.images : null;
 
@@ -113,6 +116,7 @@ function beginGame() {
     document.getElementById('clues-container').innerHTML = '';
     document.getElementById('wrong-guesses').innerHTML = '';
     document.getElementById('guess-input').value = '';
+    document.getElementById('guess-feedback').textContent = '';
     document.getElementById('guess-section').style.display = 'block';
 
     const badge = document.getElementById('mode-badge');
@@ -241,9 +245,18 @@ function getRacewearImage() {
 function submitGuess() {
     const input = document.getElementById('guess-input').value.trim();
     const guess = selectedGuess || input;
+    const feedback = document.getElementById('guess-feedback');
     if (!guess) return;
 
     const normalizedGuess = normalize(guess);
+
+    // Duplicate guess check
+    if (wrongGuesses.has(normalizedGuess)) {
+        feedback.textContent = 'You already guessed that!';
+        return;
+    }
+
+    feedback.textContent = '';
     const correctName = normalize(currentChar.name_en);
 
     if (normalizedGuess === correctName) {
@@ -251,6 +264,7 @@ function submitGuess() {
         showResult(true);
     } else {
         markDot(attempt, 'used');
+        wrongGuesses.add(normalizedGuess);
         addWrongGuess(guess);
         attempt++;
         document.getElementById('guess-input').value = '';
@@ -268,6 +282,7 @@ function skipAttempt() {
     markDot(attempt, 'used');
     attempt++;
     document.getElementById('guess-input').value = '';
+    document.getElementById('guess-feedback').textContent = '';
     selectedGuess = '';
     closeAutocomplete();
     if (attempt >= MAX_ATTEMPTS) {
@@ -363,7 +378,7 @@ function showResult(correct, isReplay = false) {
 
     const playSupportBtn = document.getElementById('play-support-btn');
     if (playSupportBtn) playSupportBtn.addEventListener('click', () => {
-        window.location.href = '/support-daily.html';
+        window.location.href = '/support.html';
     });
 
     const playInfiniteBtn = document.getElementById('play-infinite-btn');
@@ -444,10 +459,11 @@ let acIndex = -1;
 guessInput.addEventListener('input', () => {
     selectedGuess = '';
     const val = normalize(guessInput.value);
+    document.getElementById('guess-feedback').textContent = '';
     if (!val) { closeAutocomplete(); return; }
 
     const matches = allChars.filter(c =>
-        c.name_en && normalize(c.name_en).includes(val)
+        c.name_en && normalize(c.name_en).includes(val) && !wrongGuesses.has(normalize(c.name_en))
     ).slice(0, 8);
 
     if (!matches.length) { closeAutocomplete(); return; }

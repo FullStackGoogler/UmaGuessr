@@ -9,8 +9,8 @@ export default {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'src/index.html'),
-                umaDaily: resolve(__dirname, 'src/uma-daily.html'),
-                supportDaily: resolve(__dirname, 'src/support-daily.html'),
+                umaDaily: resolve(__dirname, 'src/uma.html'),
+                supportDaily: resolve(__dirname, 'src/support.html'),
             },
         }
     },

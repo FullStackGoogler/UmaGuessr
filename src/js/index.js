@@ -63,10 +63,10 @@ function injectInfiniteModal() {
     document.getElementById('close-infinite-btn').addEventListener('click', closeInfiniteModal);
     el.addEventListener('click', e => { if (e.target === el) closeInfiniteModal(); });
     document.getElementById('infinite-uma-btn').addEventListener('click', () => {
-        window.location.href = '/uma-daily.html?mode=infinite';
+        window.location.href = '/uma.html?mode=infinite';
     });
     document.getElementById('infinite-support-btn').addEventListener('click', () => {
-        window.location.href = '/support-daily.html?mode=infinite';
+        window.location.href = '/support.html?mode=infinite';
     });
 }
 
@@ -94,10 +94,10 @@ async function init() {
     checkDailyStatuses();
 
     document.getElementById('uma-daily-btn').addEventListener('click', () => {
-        window.location.href = '/uma-daily.html';
+        window.location.href = '/uma.html';
     });
     document.getElementById('support-daily-btn').addEventListener('click', () => {
-        window.location.href = '/support-daily.html';
+        window.location.href = '/support.html';
     });
     document.getElementById('infinite-btn').addEventListener('click', openInfiniteModal);
 }

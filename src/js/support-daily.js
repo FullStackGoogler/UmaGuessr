@@ -6,8 +6,10 @@ import { initFooter } from '../shared/footer.js';
 
 let allCards = [];
 let currentCard = null;
+let cardImage = null;
 let attempt = 0;
 let selectedGuess = '';
+let wrongGuesses = new Set();
 let gameMode = null; // 'daily' | 'infinite'
 let supportDailyComplete = false;
 let lastWonAttempt = -1;
@@ -15,16 +17,23 @@ let lastWonAttempt = -1;
 const MAX_ATTEMPTS = 6;
 const SUPPORT_DAILY_KEY = 'umaguessr_support_daily';
 const SUPPORT_STATS_KEY = 'umaguessr_support_stats';
-const SUPPORT_START_DATE = '2026-05-20T12:00:00Z';
+const SUPPORT_START_DATE = '2026-05-20T12:00:00Z'; //TODO: Finalize a starting date
+
+const PIXEL_SIZES = [150, 100, 75, 50, 25, 15];
+
+//TODO: Cards that are currently not on Global, update as needed
+const EXCLUDED_CARD_IDS = new Set([
+    30106, 30105, 30104, 30103, 30102, 30067, 30061, 30060, 30059, 30058,
+    30053, 20049, 20048, 20044, 20033, 10081
+]);
 
 // ─── DATA LOADING ──────────────────────────────────────────────────
 
 async function loadData() {
     try {
-        // Uncomment when data is ready:
-        // const res = await fetch('/assets/data/supportCards.json');
-        // allCards = await res.json();
-        allCards = [];
+        const res = await fetch('/assets/data/supportCards.json');
+        allCards = await res.json();
+        allCards = allCards.filter(c => !EXCLUDED_CARD_IDS.has(c.game_id));
 
         document.getElementById('loading').style.display = 'none';
         checkSupportDailyStatus();
@@ -81,42 +90,52 @@ function saveSupportDailyResult(won, attemptNum) {
         dateKey: key,
         won,
         attemptNum,
-        cardName: currentCard?.name || 'Unknown'
+        cardName: currentCard ? getCardDisplayName(currentCard) : 'Unknown'
     }));
+}
+
+// ─── CARD HELPERS ──────────────────────────────────────────────────
+
+function getCardDisplayName(card) {
+    return `[${card.card_title}] ${card.chara_name}`;
+}
+
+function getCardRarity(card) {
+    const firstDigit = String(card.game_id)[0];
+    const map = { '1': 'R', '2': 'SR', '3': 'SSR' };
+    return map[firstDigit] || '?';
+}
+
+function getCardImageUrl(card) {
+    return `https://assets.umaguessr.com/images/${card.game_id}.png`;
 }
 
 // ─── GAME START ──────────────────────────────────────────────────
 
-function getPlaceholderCard() {
-    return { id: 30001, name: 'Placeholder Card', image: 'https://assets.umaguessr.com/images/30001.png' };
-}
-
 function startSupportDaily() {
     gameMode = 'daily';
-    currentCard = allCards.length > 0 ? getDailySupportCard() : getPlaceholderCard();
+    currentCard = getDailySupportCard();
     beginGame();
 }
 
 function startInfinite() {
     gameMode = 'infinite';
-    currentCard = allCards.length > 0
-        ? allCards[Math.floor(Math.random() * allCards.length)]
-        : getPlaceholderCard();
+    currentCard = allCards[Math.floor(Math.random() * allCards.length)];
     beginGame();
 }
 
 function beginGame() {
     attempt = 0;
     selectedGuess = '';
+    cardImage = null;
+    wrongGuesses = new Set();
 
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('game-screen').style.display = 'block';
     document.getElementById('wrong-guesses').innerHTML = '';
     document.getElementById('guess-input').value = '';
+    document.getElementById('guess-feedback').textContent = '';
     document.getElementById('guess-section').style.display = 'block';
-
-    const cardImg = document.getElementById('card-image');
-    cardImg.src = currentCard.image || `https://assets.umaguessr.com/images/${currentCard.id}.png`;
 
     const badge = document.getElementById('mode-badge');
     badge.textContent = gameMode === 'daily' ? '🃏 Support Card Daily' : '∞ Infinite Mode';
@@ -124,15 +143,58 @@ function beginGame() {
     badge.style.display = 'inline-flex';
 
     buildProgressDots();
+    renderHints();
+    loadCardImage(() => renderPixelatedCanvas(PIXEL_SIZES[0]));
 }
 
 function showCompletedSupportDaily() {
     const saved = getSupportDailySave();
     gameMode = 'daily';
-    currentCard = allCards.length > 0 ? getDailySupportCard() : getPlaceholderCard();
+    currentCard = getDailySupportCard();
     attempt = saved.won ? saved.attemptNum - 1 : MAX_ATTEMPTS - 1;
     lastWonAttempt = saved.won ? saved.attemptNum : -1;
     showResult(saved.won, true);
+}
+
+// ─── IMAGE LOADING ──────────────────────────────────────────────────
+
+function loadCardImage(onLoad) {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+        cardImage = img;
+        onLoad();
+    };
+    img.onerror = () => {
+        console.error('Failed to load card image');
+    };
+    img.src = getCardImageUrl(currentCard);
+}
+
+// ─── PIXELATION ───────────────────────────────────────────────────────────────
+
+function renderPixelatedCanvas(pixelSize) {
+    const canvas = document.getElementById('card-canvas');
+    if (!canvas || !cardImage) return;
+
+    const W = 450;
+    const H = 600;
+    canvas.width = W;
+    canvas.height = H;
+
+    const ctx = canvas.getContext('2d');
+
+    // Step 1: draw image at reduced size (pixelSize x proportional)
+    const smallW = Math.ceil(W / pixelSize);
+    const smallH = Math.ceil(H / pixelSize);
+
+    // Draw tiny
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(cardImage, 0, 0, smallW, smallH);
+
+    // Step 2: scale back up with no smoothing for blocky look
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(canvas, 0, 0, smallW, smallH, 0, 0, W, H);
 }
 
 // ─── GAME FLOW ──────────────────────────────────────────────────
@@ -153,25 +215,75 @@ function markDot(idx, type) {
     if (d) d.className = `dot ${type}`;
 }
 
+function renderHints() {
+    const hintsContainer = document.getElementById('hints-container');
+    const rarityUnlocked = attempt >= 2;
+    const typingUnlocked = attempt >= 4;
+
+    const rarity = rarityUnlocked ? getCardRarity(currentCard) : null;
+    const typing = typingUnlocked ? currentCard.typing : null;
+
+    const rarityContent = rarityUnlocked
+        ? `<img src="/assets/support-rarity/${rarity}.png" alt="${rarity}" class="hint-img" />`
+        : `<div class="clue-content hint-locked">? — unlocks in ${2 - attempt} guess${2 - attempt === 1 ? '' : 'es'}</div>`;
+
+    const typingContent = typingUnlocked
+        ? `<img src="/assets/support-type/${typing}.png" alt="${typing}" class="hint-img" />`
+        : `<div class="clue-content hint-locked">? — unlocks in ${4 - attempt} guess${4 - attempt === 1 ? '' : 'es'}</div>`;
+   
+    hintsContainer.innerHTML = `
+        <div class="clue-card">
+            <div class="clue-row">
+                <div>
+                    <div class="clue-label">Rarity</div>
+                    ${rarityContent}
+                </div>
+                <div>
+                    <div class="clue-label">Typing</div>
+                    ${typingContent}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 function submitGuess() {
     const input = document.getElementById('guess-input').value.trim();
     const guess = selectedGuess || input;
+    const feedback = document.getElementById('guess-feedback');
+
     if (!guess) return;
 
     const normalizedGuess = normalize(guess);
-    const correctName = normalize(currentCard.name || '');
+
+    // Duplicate guess check
+    if (wrongGuesses.has(normalizedGuess)) {
+        feedback.textContent = 'You already guessed that!';
+        return;
+    }
+
+    feedback.textContent = '';
+
+    const correctName = normalize(getCardDisplayName(currentCard));
 
     if (normalizedGuess === correctName) {
         markDot(attempt, 'correct');
         showResult(true);
     } else {
         markDot(attempt, 'used');
+        wrongGuesses.add(normalizedGuess);
         addWrongGuess(guess);
         attempt++;
         document.getElementById('guess-input').value = '';
         selectedGuess = '';
         closeAutocomplete();
-        if (attempt >= MAX_ATTEMPTS) showResult(false);
+
+        if (attempt >= MAX_ATTEMPTS) {
+            showResult(false);
+        } else {
+            renderPixelatedCanvas(PIXEL_SIZES[attempt]);
+            renderHints();
+        }
     }
 }
 
@@ -179,9 +291,16 @@ function skipAttempt() {
     markDot(attempt, 'used');
     attempt++;
     document.getElementById('guess-input').value = '';
+    document.getElementById('guess-feedback').textContent = '';
     selectedGuess = '';
     closeAutocomplete();
-    if (attempt >= MAX_ATTEMPTS) showResult(false);
+
+    if (attempt >= MAX_ATTEMPTS) {
+        showResult(false);
+    } else {
+        renderPixelatedCanvas(PIXEL_SIZES[attempt]);
+        renderHints();
+    }
 }
 
 function addWrongGuess(name) {
@@ -238,21 +357,39 @@ function showResult(correct, isReplay = false) {
             <p>${bannerSub}</p>
         </div>
         <div class="result-card-img-wrap">
-            <img src="${currentCard.image || `https://assets.umaguessr.com/images/${currentCard.id}.png`}"
-                 alt="${currentCard.name}" class="reveal-card-img" />
+            <canvas id="result-card-canvas" width="450" height="600" class="reveal-card-img"></canvas>
         </div>
         <div class="result-card-name">
-            <h3>${currentCard.name || '—'}</h3>
+            <h3>${getCardDisplayName(currentCard)}</h3>
+            <p class="result-card-meta">${getCardRarity(currentCard)} · ${currentCard.typing}</p>
         </div>
         ${dailyFooterHTML}
     `;
+
+    // Draw full image onto result canvas using cached cardImage
+    const resultCanvas = document.getElementById('result-card-canvas');
+    if (resultCanvas && cardImage) {
+        const ctx = resultCanvas.getContext('2d');
+        ctx.imageSmoothingEnabled = true;
+        ctx.drawImage(cardImage, 0, 0, 450, 600);
+    } else if (resultCanvas && !cardImage) {
+        // isReplay case — image wasn't loaded during this session, fetch it
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+            const ctx = resultCanvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.drawImage(img, 0, 0, 450, 600);
+        };
+        img.src = getCardImageUrl(currentCard);
+    }
 
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn) shareBtn.addEventListener('click', shareResult);
 
     const playUmaBtn = document.getElementById('play-uma-btn');
     if (playUmaBtn) playUmaBtn.addEventListener('click', () => {
-        window.location.href = '/uma-daily.html';
+        window.location.href = '/uma.html';
     });
 
     const playInfiniteBtn = document.getElementById('play-infinite-btn');
@@ -333,21 +470,26 @@ let acIndex = -1;
 guessInput.addEventListener('input', () => {
     selectedGuess = '';
     const val = normalize(guessInput.value);
+    document.getElementById('guess-feedback').textContent = '';
     if (!val || allCards.length === 0) { closeAutocomplete(); return; }
 
     const matches = allCards.filter(c =>
-        c.name && normalize(c.name).includes(val)
-    ).slice(0, 8);
+        {
+            const displayName = getCardDisplayName(c);
+            return normalize(displayName).includes(val) && !wrongGuesses.has(normalize(displayName));
+        })
+        .slice(0, 8);
 
     if (!matches.length) { closeAutocomplete(); return; }
 
     acList.innerHTML = '';
     acIndex = -1;
     matches.forEach((c) => {
+        const displayName = getCardDisplayName(c);
         const item = document.createElement('div');
         item.className = 'autocomplete-item';
-        item.innerHTML = `<span>${c.name}</span>`;
-        item.addEventListener('mousedown', () => selectAC(c.name));
+        item.innerHTML = `<span>${displayName}</span>`;
+        item.addEventListener('mousedown', () => selectAC(displayName));
         acList.appendChild(item);
     });
     acList.classList.add('open');

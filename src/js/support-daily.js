@@ -393,7 +393,7 @@ function showResult(correct, isReplay = false) {
     });
 
     const playInfiniteBtn = document.getElementById('play-infinite-btn');
-    if (playInfiniteBtn) playInfiniteBtn.addEventListener('click', startInfinite);
+    if (playInfiniteBtn) playInfiniteBtn.addEventListener('click', () => { window.location.href = '/support.html?mode=infinite'; });
 }
 
 function getUmaDailySave() {

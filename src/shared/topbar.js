@@ -246,7 +246,7 @@ function closeUpdates() { document.getElementById('updates-modal').classList.rem
 
 function wireTopbarListeners(config) {
     document.getElementById('home-title').addEventListener('click', () => {
-        window.location.href = '/index.html';
+        window.location.href = '/';
     });
     document.getElementById('theme-btn').addEventListener('click', toggleTheme);
     document.getElementById('help-btn').addEventListener('click', openHelp);

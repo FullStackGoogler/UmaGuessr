@@ -208,10 +208,6 @@ function buildStatsHTML(s, emptyMessage) {
         </div>
         <div class="dist-title">Guess Distribution <span style="font-weight:400;color:var(--text-muted)">(daily only)</span></div>
         ${s.played === 0 ? `<div class="no-stats">${emptyMessage}</div>` : distRows + lossRow}
-        <div class="stats-countdown">
-            <div class="stats-countdown-label">Next daily</div>
-            <div class="countdown-val stats-countdown-val">--:--:--</div>
-        </div>
     `;
 }
  

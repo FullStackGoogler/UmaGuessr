@@ -1,4 +1,4 @@
-import { initTheme, toggleTheme, getTodayKeyEST, startCountdownTick } from './script.js';
+import { initTheme, toggleTheme, setTheme, getTodayKeyEST, startCountdownTick } from './script.js';
 
 // ─── TOPBAR INJECTION ──────────────────────────────────────────────────
 
@@ -29,7 +29,12 @@ export async function initTopbar(config = {}) {
         <p>${subtitle}</p>
         ${countdownHTML}
         <div class="header-actions">
-            <button class="btn-theme" id="theme-btn">🌑</button>
+            <label class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
+                <input type="checkbox" id="theme-checkbox" />
+                <span class="theme-track">
+                    <span class="theme-thumb"></span>
+                </span>
+            </label>
             <button class="header-btn" id="help-btn">?</button>
             <button class="header-btn" id="updates-btn">🛠️</button>
             ${statsBtn}
@@ -244,7 +249,10 @@ function wireTopbarListeners(config) {
     document.getElementById('home-title').addEventListener('click', () => {
         window.location.href = '/';
     });
-    document.getElementById('theme-btn').addEventListener('click', toggleTheme);
+    document.getElementById('theme-checkbox').addEventListener('change', () => {
+        const isDark = document.getElementById('theme-checkbox').checked;
+        setTheme(isDark ? 'dark' : 'light');
+    });
     document.getElementById('help-btn').addEventListener('click', openHelp);
     document.getElementById('updates-btn').addEventListener('click', openUpdates);
     document.getElementById('close-help-btn').addEventListener('click', closeHelp);

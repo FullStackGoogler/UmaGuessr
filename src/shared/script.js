@@ -13,7 +13,8 @@ export function toggleTheme() {
 export function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('umaguessr_theme', theme);
-    document.getElementById('theme-btn').textContent = theme === 'dark' ? '🌕' : '🌑';
+    const checkbox = document.getElementById('theme-checkbox');
+    if (checkbox) checkbox.checked = theme === 'dark';
     const lightGif = document.getElementById('home-gif-light');
     const darkGif = document.getElementById('home-gif-dark');
     if (lightGif && darkGif) {

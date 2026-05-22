@@ -761,6 +761,7 @@ audio {
     display: flex;
     gap: 0.5rem;
     margin-top: 0.5rem;
+    align-items: center;
 }
 
 .header-btn {
@@ -1154,3 +1155,63 @@ audio {
     margin-top: 0.25rem;
 }
 
+/* ─── Theme Checkbox ─────────────────────────────────────────────────────── */
+
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    cursor: pointer;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.theme-track {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: var(--pink-light);
+    border: 1.5px solid var(--border);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle input:checked ~ .theme-track {
+    background: #3a3530;
+    border-color: #4a4540;
+}
+
+.theme-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.theme-thumb::after {
+    content: '🌕';
+}
+
+.theme-toggle input:checked ~ .theme-track .theme-thumb {
+    transform: translateX(24px);
+    background: var(--pink);
+}
+
+.theme-toggle input:checked ~ .theme-track .theme-thumb::after {
+    content: '🌑';
+}

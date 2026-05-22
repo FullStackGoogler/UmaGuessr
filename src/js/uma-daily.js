@@ -22,6 +22,7 @@ const UMA_STATS_KEY = 'umaguessr_uma_stats';
 // ─── DATA LOADING ──────────────────────────────────────────────────
 
 async function loadData() {
+    migrateLocalStorage();
     try {
         const [infoRes, imgRes] = await Promise.all([
             fetch('/assets/data/characterInfos.json'),
@@ -38,6 +39,48 @@ async function loadData() {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('error').style.display = 'block';
         document.getElementById('error').textContent = 'Could not load character data.';
+    }
+}
+
+function migrateLocalStorage() {
+    // keep the more recent
+    const oldDaily = localStorage.getItem('umaguessr_daily');
+    const newDaily = localStorage.getItem('umaguessr_uma_daily');
+
+    if (oldDaily) {
+        const oldParsed = JSON.parse(oldDaily);
+        if (!newDaily) {
+            localStorage.setItem('umaguessr_uma_daily', oldDaily);
+        } else {
+            const newParsed = JSON.parse(newDaily);
+            if (oldParsed.dateKey > newParsed.dateKey) {
+                localStorage.setItem('umaguessr_uma_daily', oldDaily);
+            }
+        }
+        localStorage.removeItem('umaguessr_daily');
+    }
+
+    // merge via combining counts, then deleting the deprecated keys
+    const oldStats = localStorage.getItem('umaguessr_stats');
+    const newStats = localStorage.getItem('umaguessr_uma_stats');
+
+    if (oldStats) {
+        const o = JSON.parse(oldStats);
+        if (!newStats) {
+            localStorage.setItem('umaguessr_uma_stats', oldStats);
+        } else {
+            const n = JSON.parse(newStats);
+            const merged = {
+                played: (o.played || 0) + (n.played || 0),
+                wins: (o.wins || 0) + (n.wins || 0),
+                losses: (o.losses || 0) + (n.losses || 0),
+                streak: Math.max(o.streak || 0, n.streak || 0),
+                maxStreak: Math.max(o.maxStreak || 0, n.maxStreak || 0),
+                dist: o.dist.map((v, i) => (v || 0) + (n.dist[i] || 0)),
+            };
+            localStorage.setItem('umaguessr_uma_stats', JSON.stringify(merged));
+        }
+        localStorage.removeItem('umaguessr_stats');
     }
 }
 

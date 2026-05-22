@@ -1,0 +1,1486 @@
+[
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1001,
+        "chara_name": "Special Week",
+        "game_id": 10001,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1002,
+        "chara_name": "Silence Suzuka",
+        "game_id": 10002,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1003,
+        "chara_name": "Tokai Teio",
+        "game_id": 10003,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1004,
+        "chara_name": "Maruzensky",
+        "game_id": 10004,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1006,
+        "chara_name": "Oguri Cap",
+        "game_id": 10005,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1007,
+        "chara_name": "Gold Ship",
+        "game_id": 10006,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1008,
+        "chara_name": "Vodka",
+        "game_id": 10007,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1010,
+        "chara_name": "Taiki Shuttle",
+        "game_id": 10008,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1011,
+        "chara_name": "Grass Wonder",
+        "game_id": 10009,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1013,
+        "chara_name": "Mejiro McQueen",
+        "game_id": 10010,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1014,
+        "chara_name": "El Condor Pasa",
+        "game_id": 10011,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1015,
+        "chara_name": "T.M. Opera O",
+        "game_id": 10012,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1017,
+        "chara_name": "Symboli Rudolf",
+        "game_id": 10013,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1020,
+        "chara_name": "Seiun Sky",
+        "game_id": 10014,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1030,
+        "chara_name": "Rice Shower",
+        "game_id": 10015,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1035,
+        "chara_name": "Winning Ticket",
+        "game_id": 10016,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1040,
+        "chara_name": "Gold City",
+        "game_id": 10017,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1041,
+        "chara_name": "Sakura Bakushin O",
+        "game_id": 10018,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1045,
+        "chara_name": "Super Creek",
+        "game_id": 10019,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1052,
+        "chara_name": "Haru Urara",
+        "game_id": 10020,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 9001,
+        "chara_name": "Reward collection period over.",
+        "game_id": 10021,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 9004,
+        "chara_name": "Trainer Kiryuin",
+        "game_id": 10022,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1009,
+        "chara_name": "Daiwa Scarlet",
+        "game_id": 10023,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1012,
+        "chara_name": "Hishi Amazon",
+        "game_id": 10024,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1018,
+        "chara_name": "Air Groove",
+        "game_id": 10025,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1019,
+        "chara_name": "Agnes Digital",
+        "game_id": 10026,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1021,
+        "chara_name": "Tamamo Cross",
+        "game_id": 10027,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1022,
+        "chara_name": "Fine Motion",
+        "game_id": 10028,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1023,
+        "chara_name": "Biwa Hayahide",
+        "game_id": 10029,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1024,
+        "chara_name": "Mayano Top Gun",
+        "game_id": 10030,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1025,
+        "chara_name": "Manhattan Cafe",
+        "game_id": 10031,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1026,
+        "chara_name": "Mihono Bourbon",
+        "game_id": 10032,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1027,
+        "chara_name": "Mejiro Ryan",
+        "game_id": 10033,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1029,
+        "chara_name": "Yukino Bijin",
+        "game_id": 10034,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1031,
+        "chara_name": "Ines Fujin",
+        "game_id": 10035,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1032,
+        "chara_name": "Agnes Tachyon",
+        "game_id": 10036,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1036,
+        "chara_name": "Air Shakur",
+        "game_id": 10037,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1037,
+        "chara_name": "Eishin Flash",
+        "game_id": 10038,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1046,
+        "chara_name": "Smart Falcon",
+        "game_id": 10039,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1050,
+        "chara_name": "Narita Taishin",
+        "game_id": 10040,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1051,
+        "chara_name": "Nishino Flower",
+        "game_id": 10041,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1054,
+        "chara_name": "Biko Pegasus",
+        "game_id": 10042,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1055,
+        "chara_name": "Marvelous Sunday",
+        "game_id": 10043,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1056,
+        "chara_name": "That Trainer ID does not exist.",
+        "game_id": 10044,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1058,
+        "chara_name": "Meisho Doto",
+        "game_id": 10045,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1059,
+        "chara_name": "Mejiro Dober",
+        "game_id": 10046,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1060,
+        "chara_name": "Nice Nature",
+        "game_id": 10047,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1061,
+        "chara_name": "King Halo",
+        "game_id": 10048,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1005,
+        "chara_name": "Fuji Kiseki",
+        "game_id": 10049,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1044,
+        "chara_name": "Sweep Tosho",
+        "game_id": 10050,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1066,
+        "chara_name": "Twin Turbo",
+        "game_id": 10051,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1065,
+        "chara_name": "Daitaku Helios",
+        "game_id": 10052,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1063,
+        "chara_name": "Ikuno Dictus",
+        "game_id": 10053,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1064,
+        "chara_name": "Mejiro Palmer",
+        "game_id": 10054,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1068,
+        "chara_name": "Kitasan Black",
+        "game_id": 10055,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1067,
+        "chara_name": "Satono Diamond",
+        "game_id": 10056,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1062,
+        "chara_name": "Matikanetannhauser",
+        "game_id": 10057,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1072,
+        "chara_name": "Yaeno Muteki",
+        "game_id": 10058,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1047,
+        "chara_name": "Zenno Rob Roy",
+        "game_id": 10059,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 9006,
+        "chara_name": "Riko Kashimoto",
+        "game_id": 10060,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1042,
+        "chara_name": "Seeking the Pearl",
+        "game_id": 10061,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1069,
+        "chara_name": "Sakura Chiyono O",
+        "game_id": 10062,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1039,
+        "chara_name": "Kawakami Princess",
+        "game_id": 10063,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1028,
+        "chara_name": "Hishi Akebono",
+        "game_id": 10064,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1053,
+        "chara_name": "Bamboo Memory",
+        "game_id": 10065,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1043,
+        "chara_name": "Shinko Windy",
+        "game_id": 10066,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1049,
+        "chara_name": "Nakayama Festa",
+        "game_id": 10067,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1034,
+        "chara_name": "Inari One",
+        "game_id": 10068,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1071,
+        "chara_name": "Mejiro Ardan",
+        "game_id": 10069,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1048,
+        "chara_name": "Tosen Jordan",
+        "game_id": 10070,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1070,
+        "chara_name": "Sirius Symboli",
+        "game_id": 10071,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1016,
+        "chara_name": "Narita Brian",
+        "game_id": 10072,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1038,
+        "chara_name": "Curren Chan",
+        "game_id": 10073,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 9005,
+        "chara_name": "Sasami Anshinzawa",
+        "game_id": 10074,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1033,
+        "chara_name": "Admire Vega",
+        "game_id": 10075,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1074,
+        "chara_name": "Mejiro Bright",
+        "game_id": 10076,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1077,
+        "chara_name": "Narita Top Road",
+        "game_id": 10077,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Academy",
+        "chara_id": 1057,
+        "chara_name": "Mr. C.B.",
+        "game_id": 10078,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Well, Look Who's Home",
+        "chara_id": 1005,
+        "chara_name": "Fuji Kiseki",
+        "game_id": 20001,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Nothing Hard Work Can't Solve!",
+        "chara_id": 1009,
+        "chara_name": "Daiwa Scarlet",
+        "game_id": 20002,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Reach the Top!",
+        "chara_id": 1012,
+        "chara_name": "Hishi Amazon",
+        "game_id": 20003,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Nothing Escapes the Vice Prez",
+        "chara_id": 1018,
+        "chara_name": "Air Groove",
+        "game_id": 20004,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Digital's Recharge Station",
+        "chara_id": 1019,
+        "chara_name": "Agnes Digital",
+        "game_id": 20005,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Trial Initiation",
+        "chara_id": 1023,
+        "chara_name": "Biwa Hayahide",
+        "game_id": 20006,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Cute + Cute = ?",
+        "chara_id": 1024,
+        "chara_name": "Mayano Top Gun",
+        "game_id": 20007,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "My Solo Drawn to Raindrop Drums",
+        "chara_id": 1025,
+        "chara_name": "Manhattan Cafe",
+        "game_id": 20008,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Pal-Assisted Training",
+        "chara_id": 1026,
+        "chara_name": "Mihono Bourbon",
+        "game_id": 20009,
+        "typing": "Power"
+    },
+    {
+        "card_title": "On and Off the Court",
+        "chara_id": 1027,
+        "chara_name": "Mejiro Ryan",
+        "game_id": 20010,
+        "typing": "Power"
+    },
+    {
+        "card_title": "City Girl 101",
+        "chara_id": 1029,
+        "chara_name": "Yukino Bijin",
+        "game_id": 20011,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Experimental Studies on Subject A",
+        "chara_id": 1032,
+        "chara_name": "Agnes Tachyon",
+        "game_id": 20012,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "5:00 a.m.\u2014Right on Schedule",
+        "chara_id": 1037,
+        "chara_name": "Eishin Flash",
+        "game_id": 20013,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Poolside High Tides",
+        "chara_id": 1050,
+        "chara_name": "Narita Taishin",
+        "game_id": 20014,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "A Marvelous \u2606 Plan",
+        "chara_id": 1055,
+        "chara_name": "Marvelous Sunday",
+        "game_id": 20015,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Fate's Forecast",
+        "chara_id": 1056,
+        "chara_name": "That Trainer ID does not exist.",
+        "game_id": 20016,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Fighting for Fortune",
+        "chara_id": 1058,
+        "chara_name": "Meisho Doto",
+        "game_id": 20017,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Ignore the Stares",
+        "chara_id": 1059,
+        "chara_name": "Mejiro Dober",
+        "game_id": 20018,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "It's Just Water",
+        "chara_id": 1060,
+        "chara_name": "Nice Nature",
+        "game_id": 20019,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "First-Rate Plan",
+        "chara_id": 1061,
+        "chara_name": "King Halo",
+        "game_id": 20020,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Trainers' Teamwork",
+        "chara_id": 9004,
+        "chara_name": "Trainer Kiryuin",
+        "game_id": 20021,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Now Dat's What I Call Grilled Squid!",
+        "chara_id": 1021,
+        "chara_name": "Tamamo Cross",
+        "game_id": 20022,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Lamplit Training of a Witch-to-Be",
+        "chara_id": 1044,
+        "chara_name": "Sweep Tosho",
+        "game_id": 20023,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Let's Get This Party Lit!",
+        "chara_id": 1065,
+        "chara_name": "Daitaku Helios",
+        "game_id": 20024,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Never Skip Warm-Ups",
+        "chara_id": 1063,
+        "chara_name": "Ikuno Dictus",
+        "game_id": 20025,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Messing Around",
+        "chara_id": 1060,
+        "chara_name": "Nice Nature",
+        "game_id": 20026,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Lifting Your Spirits",
+        "chara_id": 1051,
+        "chara_name": "Nishino Flower",
+        "game_id": 20027,
+        "typing": "Power"
+    },
+    {
+        "card_title": "The Perfect Book for You",
+        "chara_id": 1047,
+        "chara_name": "Zenno Rob Roy",
+        "game_id": 20028,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "The World's My Oyster",
+        "chara_id": 1042,
+        "chara_name": "Seeking the Pearl",
+        "game_id": 20029,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "You Earned It!",
+        "chara_id": 1031,
+        "chara_name": "Ines Fujin",
+        "game_id": 20030,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "///WARNING GATE///",
+        "chara_id": 1043,
+        "chara_name": "Shinko Windy",
+        "game_id": 20031,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Laughing through the Mud",
+        "chara_id": 1034,
+        "chara_name": "Inari One",
+        "game_id": 20032,
+        "typing": "Power"
+    },
+    {
+        "card_title": "My Heart Will Go On",
+        "chara_id": 1071,
+        "chara_name": "Mejiro Ardan",
+        "game_id": 20034,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Turf as Nails",
+        "chara_id": 1048,
+        "chara_name": "Tosen Jordan",
+        "game_id": 20035,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Grma, Ramen \u266a",
+        "chara_id": 1022,
+        "chara_name": "Fine Motion",
+        "game_id": 20037,
+        "typing": "Power"
+    },
+    {
+        "card_title": "The Brightest Star Shines On",
+        "chara_id": 1070,
+        "chara_name": "Sirius Symboli",
+        "game_id": 20038,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "An Annoying Supervisor",
+        "chara_id": 1008,
+        "chara_name": "Vodka",
+        "game_id": 20039,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Hot Hearts and Cool Drinks",
+        "chara_id": 1027,
+        "chara_name": "Mejiro Ryan",
+        "game_id": 20040,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Aim for the Brightest",
+        "chara_id": 1033,
+        "chara_name": "Admire Vega",
+        "game_id": 20041,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "The Perfect Morning Greeting!",
+        "chara_id": 1041,
+        "chara_name": "Sakura Bakushin O",
+        "game_id": 20042,
+        "typing": "Power"
+    },
+    {
+        "card_title": "At the End of the Day",
+        "chara_id": 1001,
+        "chara_name": "Special Week",
+        "game_id": 20043,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Cozy Cute Memory \u266a",
+        "chara_id": 1038,
+        "chara_name": "Curren Chan",
+        "game_id": 20044,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Almost... an Umadol?! \u2661",
+        "chara_id": 1046,
+        "chara_name": "Smart Falcon",
+        "game_id": 20045,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Reckless Witch Training",
+        "chara_id": 1044,
+        "chara_name": "Sweep Tosho",
+        "game_id": 20046,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Step! Smile! Wink!",
+        "chara_id": 1003,
+        "chara_name": "Tokai Teio",
+        "game_id": 20047,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "The Brightest Star in Japan!",
+        "chara_id": 1001,
+        "chara_name": "Special Week",
+        "game_id": 30001,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Beyond This Shining Moment",
+        "chara_id": 1002,
+        "chara_name": "Silence Suzuka",
+        "game_id": 30002,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Dream Big!",
+        "chara_id": 1003,
+        "chara_name": "Tokai Teio",
+        "game_id": 30003,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Breakaway Battleship",
+        "chara_id": 1007,
+        "chara_name": "Gold Ship",
+        "game_id": 30004,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Wild Rider",
+        "chara_id": 1008,
+        "chara_name": "Vodka",
+        "game_id": 30005,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Fairest Fleur",
+        "chara_id": 1011,
+        "chara_name": "Grass Wonder",
+        "game_id": 30006,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Champion's Passion",
+        "chara_id": 1014,
+        "chara_name": "El Condor Pasa",
+        "game_id": 30007,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Foolproof Plan",
+        "chara_id": 1020,
+        "chara_name": "Seiun Sky",
+        "game_id": 30008,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Split the Sky, White Lightning!",
+        "chara_id": 1021,
+        "chara_name": "Tamamo Cross",
+        "game_id": 30009,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Wave of Gratitude",
+        "chara_id": 1022,
+        "chara_name": "Fine Motion",
+        "game_id": 30010,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Watch My Star Fly!",
+        "chara_id": 1031,
+        "chara_name": "Ines Fujin",
+        "game_id": 30011,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "BNWinner!",
+        "chara_id": 1035,
+        "chara_name": "Winning Ticket",
+        "game_id": 30012,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "7 More Centimeters",
+        "chara_id": 1036,
+        "chara_name": "Air Shakur",
+        "game_id": 30013,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Run(my)way",
+        "chara_id": 1040,
+        "chara_name": "Gold City",
+        "game_id": 30014,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Eat Fast! Yum Fast!",
+        "chara_id": 1041,
+        "chara_name": "Sakura Bakushin O",
+        "game_id": 30015,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Piece of Mind",
+        "chara_id": 1045,
+        "chara_name": "Super Creek",
+        "game_id": 30016,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "My Umadol Way \u2606",
+        "chara_id": 1046,
+        "chara_name": "Smart Falcon",
+        "game_id": 30017,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Even the Littlest Bud",
+        "chara_id": 1051,
+        "chara_name": "Nishino Flower",
+        "game_id": 30018,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Urara's Day Off!",
+        "chara_id": 1052,
+        "chara_name": "Haru Urara",
+        "game_id": 30019,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Double Carrot Punch!",
+        "chara_id": 1054,
+        "chara_name": "Biko Pegasus",
+        "game_id": 30020,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Tracen Reception",
+        "chara_id": 9001,
+        "chara_name": "Reward collection period over.",
+        "game_id": 30021,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Your Team Ace",
+        "chara_id": 1013,
+        "chara_name": "Mejiro McQueen",
+        "game_id": 30022,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Showered in Joy",
+        "chara_id": 1030,
+        "chara_name": "Rice Shower",
+        "game_id": 30023,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Get Lots of Hugs for Me",
+        "chara_id": 1006,
+        "chara_name": "Oguri Cap",
+        "game_id": 30024,
+        "typing": "Power"
+    },
+    {
+        "card_title": "The Setting Sun and Rising Stars",
+        "chara_id": 1001,
+        "chara_name": "Special Week",
+        "game_id": 30025,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Turbo Booooost!",
+        "chara_id": 1066,
+        "chara_name": "Twin Turbo",
+        "game_id": 30026,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Go Ahead and Laugh",
+        "chara_id": 1064,
+        "chara_name": "Mejiro Palmer",
+        "game_id": 30027,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Fire at My Heels",
+        "chara_id": 1068,
+        "chara_name": "Kitasan Black",
+        "game_id": 30028,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "The Will to Overtake",
+        "chara_id": 1067,
+        "chara_name": "Satono Diamond",
+        "game_id": 30029,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Just Keep Going",
+        "chara_id": 1062,
+        "chara_name": "Matikanetannhauser",
+        "game_id": 30030,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Hometown Cheers",
+        "chara_id": 1029,
+        "chara_name": "Yukino Bijin",
+        "game_id": 30031,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Fiery Discipline",
+        "chara_id": 1072,
+        "chara_name": "Yaeno Muteki",
+        "game_id": 30032,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Dreams <I>Do</I> Come True!",
+        "chara_id": 1035,
+        "chara_name": "Winning Ticket",
+        "game_id": 30033,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Happiness Just around the Bend",
+        "chara_id": 1030,
+        "chara_name": "Rice Shower",
+        "game_id": 30034,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Planned Perfection",
+        "chara_id": 9006,
+        "chara_name": "Riko Kashimoto",
+        "game_id": 30036,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Peak Sakura Season",
+        "chara_id": 1069,
+        "chara_name": "Sakura Chiyono O",
+        "game_id": 30038,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Princess Bride",
+        "chara_id": 1039,
+        "chara_name": "Kawakami Princess",
+        "game_id": 30039,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Who Wants the First Bite?",
+        "chara_id": 1028,
+        "chara_name": "Hishi Akebono",
+        "game_id": 30040,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "My Thoughts, My Desires",
+        "chara_id": 1059,
+        "chara_name": "Mejiro Dober",
+        "game_id": 30041,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Head-on Fight!",
+        "chara_id": 1053,
+        "chara_name": "Bamboo Memory",
+        "game_id": 30042,
+        "typing": "Power"
+    },
+    {
+        "card_title": "43, 8, 1",
+        "chara_id": 1049,
+        "chara_name": "Nakayama Festa",
+        "game_id": 30043,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Two Pieces",
+        "chara_id": 1016,
+        "chara_name": "Narita Brian",
+        "game_id": 30044,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "It's All Mine!",
+        "chara_id": 1044,
+        "chara_name": "Sweep Tosho",
+        "game_id": 30045,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Full-Blown Tantrum",
+        "chara_id": 1035,
+        "chara_name": "Winning Ticket",
+        "game_id": 30046,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Mini\u2606Vacation",
+        "chara_id": 1009,
+        "chara_name": "Daiwa Scarlet",
+        "game_id": 30047,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Winning Pitch",
+        "chara_id": 1027,
+        "chara_name": "Mejiro Ryan",
+        "game_id": 30048,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Daring to Dream",
+        "chara_id": 1060,
+        "chara_name": "Nice Nature",
+        "game_id": 30054,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Paint the Sky Red",
+        "chara_id": 1020,
+        "chara_name": "Seiun Sky",
+        "game_id": 30055,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Tonight, We Waltz",
+        "chara_id": 1061,
+        "chara_name": "King Halo",
+        "game_id": 30056,
+        "typing": "Power"
+    },
+    {
+        "card_title": "That Time I Became the Strongest",
+        "chara_id": 1007,
+        "chara_name": "Gold Ship",
+        "game_id": 30057,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Regal Racers",
+        "chara_id": 1003,
+        "chara_name": "Tokai Teio",
+        "game_id": 30058,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Fugue of Fortune",
+        "chara_id": 1026,
+        "chara_name": "Mihono Bourbon",
+        "game_id": 30059,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Constellation of Stars",
+        "chara_id": 1066,
+        "chara_name": "Twin Turbo",
+        "game_id": 30060,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Our Resounding Steps",
+        "chara_id": 1023,
+        "chara_name": "Biwa Hayahide",
+        "game_id": 30061,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Winning Dream",
+        "chara_id": 1002,
+        "chara_name": "Silence Suzuka",
+        "game_id": 30062,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Warm Heart, Soft Steps",
+        "chara_id": 1063,
+        "chara_name": "Ikuno Dictus",
+        "game_id": 30063,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Beware! Halloween Night!",
+        "chara_id": 1021,
+        "chara_name": "Tamamo Cross",
+        "game_id": 30064,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Magical Heroine",
+        "chara_id": 1047,
+        "chara_name": "Zenno Rob Roy",
+        "game_id": 30065,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "The Ghost Finds Halloween Magic",
+        "chara_id": 1026,
+        "chara_name": "Mihono Bourbon",
+        "game_id": 30066,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Cutie Pie with Shining Eyes",
+        "chara_id": 1038,
+        "chara_name": "Curren Chan",
+        "game_id": 30068,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "The Whistling Arrow's Taunt",
+        "chara_id": 1016,
+        "chara_name": "Narita Brian",
+        "game_id": 30069,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Dancing Light into the Night",
+        "chara_id": 1029,
+        "chara_name": "Yukino Bijin",
+        "game_id": 30070,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Make! Some! NOISE!",
+        "chara_id": 1065,
+        "chara_name": "Daitaku Helios",
+        "game_id": 30071,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Party Formation",
+        "chara_id": 1024,
+        "chara_name": "Mayano Top Gun",
+        "game_id": 30072,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Strict Shopper",
+        "chara_id": 1050,
+        "chara_name": "Narita Taishin",
+        "game_id": 30073,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Dazzling Day in the Snow",
+        "chara_id": 1055,
+        "chara_name": "Marvelous Sunday",
+        "game_id": 30074,
+        "typing": "Power"
+    },
+    {
+        "card_title": "My Solo Spun in Spiraling Runs",
+        "chara_id": 1025,
+        "chara_name": "Manhattan Cafe",
+        "game_id": 30075,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Searching for Unseen Sights",
+        "chara_id": 1002,
+        "chara_name": "Silence Suzuka",
+        "game_id": 30076,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Lucky Star in the Sky",
+        "chara_id": 1033,
+        "chara_name": "Admire Vega",
+        "game_id": 30077,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Touching Sleeves Is Good Luck! \u266a",
+        "chara_id": 1056,
+        "chara_name": "That Trainer ID does not exist.",
+        "game_id": 30078,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Leaping into the Unknown",
+        "chara_id": 1058,
+        "chara_name": "Meisho Doto",
+        "game_id": 30079,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "This Might Sting!",
+        "chara_id": 9005,
+        "chara_name": "Sasami Anshinzawa",
+        "game_id": 30080,
+        "typing": "Pal"
+    },
+    {
+        "card_title": "Passing the Dream On",
+        "chara_id": 1001,
+        "chara_name": "Special Week",
+        "game_id": 30081,
+        "typing": "Group"
+    },
+    {
+        "card_title": "Little Cupcakes, Big Emotions",
+        "chara_id": 1051,
+        "chara_name": "Nishino Flower",
+        "game_id": 30082,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Super! Sonic! Flower Power!",
+        "chara_id": 1041,
+        "chara_name": "Sakura Bakushin O",
+        "game_id": 30083,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "My Way",
+        "chara_id": 1048,
+        "chara_name": "Tosen Jordan",
+        "game_id": 30084,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "A Fan's Joy",
+        "chara_id": 1019,
+        "chara_name": "Agnes Digital",
+        "game_id": 30085,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Peachy Silhouette",
+        "chara_id": 1077,
+        "chara_name": "Narita Top Road",
+        "game_id": 30086,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Little by Little",
+        "chara_id": 1074,
+        "chara_name": "Mejiro Bright",
+        "game_id": 30087,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Special Dreamers!",
+        "chara_id": 1067,
+        "chara_name": "Satono Diamond",
+        "game_id": 30088,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "A MORE MARVELOUS WORLD! \u2606",
+        "chara_id": 1055,
+        "chara_name": "Marvelous Sunday",
+        "game_id": 30089,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Encha\u00eenement",
+        "chara_id": 1017,
+        "chara_name": "Symboli Rudolf",
+        "game_id": 30090,
+        "typing": "Stamina"
+    },
+    {
+        "card_title": "Escorte \u00c9toile",
+        "chara_id": 1070,
+        "chara_name": "Sirius Symboli",
+        "game_id": 30091,
+        "typing": "Wit"
+    },
+    {
+        "card_title": "Mag!c Number",
+        "chara_id": 1036,
+        "chara_name": "Air Shakur",
+        "game_id": 30092,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Number 1 Outfit",
+        "chara_id": 1009,
+        "chara_name": "Daiwa Scarlet",
+        "game_id": 30093,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Make These Feelings Reach You!",
+        "chara_id": 1053,
+        "chara_name": "Bamboo Memory",
+        "game_id": 30094,
+        "typing": "Guts"
+    },
+    {
+        "card_title": "Cheer that Changed the World",
+        "chara_id": 1042,
+        "chara_name": "Seeking the Pearl",
+        "game_id": 30095,
+        "typing": "Speed"
+    },
+    {
+        "card_title": "Go Go\u2606Princess!",
+        "chara_id": 1039,
+        "chara_name": "Kawakami Princess",
+        "game_id": 30096,
+        "typing": "Power"
+    },
+    {
+        "card_title": "Dear Mr. C.B.",
+        "chara_id": 1057,
+        "chara_name": "Mr. C.B.",
+        "game_id": 30097,
+        "typing": "Wit"
+    }
+]

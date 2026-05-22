@@ -955,6 +955,12 @@ audio {
     line-height: 1.7;
 }
 
+.howto-new {
+    color: var(--pink);
+    font-weight: 700;
+    margin-right: 0.25rem;
+}
+
 /* ─── STATS TABS ─────────────────────────────────────────────────────────── */
 
 .stats-tabs {
@@ -1147,3 +1153,4 @@ audio {
     display: block;
     margin-top: 0.25rem;
 }
+

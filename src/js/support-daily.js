@@ -17,7 +17,7 @@ let lastWonAttempt = -1;
 const MAX_ATTEMPTS = 6;
 const SUPPORT_DAILY_KEY = 'umaguessr_support_daily';
 const SUPPORT_STATS_KEY = 'umaguessr_support_stats';
-const SUPPORT_START_DATE = '2026-05-20T12:00:00Z'; //TODO: Finalize a starting date
+const SUPPORT_START_DATE = '2026-05-21T12:00:00Z';
 
 const PIXEL_SIZES = [150, 100, 75, 50, 25, 15];
 

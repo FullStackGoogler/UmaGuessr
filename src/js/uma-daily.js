@@ -58,7 +58,7 @@ function autoStart() {
 
 function getDailyUma() {
     const key = getTodayKeyEST();
-    const startDate = new Date('2026-05-05T12:00:00Z');
+    const startDate = new Date('2026-05-05T12:00:00Z'); //TODO: May make more sense to refactor this out as a const
     const today = new Date(key + 'T12:00:00Z');
     const daysSinceStart = Math.floor((today - startDate) / 86400000);
     const cycle = Math.floor(daysSinceStart / allChars.length);

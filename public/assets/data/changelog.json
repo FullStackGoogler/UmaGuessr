@@ -1,10 +1,11 @@
 [
     {
         "version": "1.2",
-        "date": "2026-99-99",
+        "date": "2026-05-21",
         "changes": [
-            "stuf",
-            "stuf"
+            "Added a new gamemode!",
+            "Guess the Support Card given a pixelated version; includes both a daily and infinite mode.",
+            "More backend infrastructure development."
         ]
     },
     {

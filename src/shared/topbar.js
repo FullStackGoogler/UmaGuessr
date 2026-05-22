@@ -48,6 +48,26 @@ export async function initTopbar(config = {}) {
                     <h2>How to Play</h2>
 
                     <div class="howto-content" id="howto-content">
+                        <p><strong><span class="howto-new">New!</span> Guess the Support Card</strong></p>
+                        <br>
+                        <p>
+                            You have <strong>6 attempts</strong> to guess the Support Card. 
+                            Skipping or submitting an incorrect guess will un-pixelate the image.
+                            Additional hints are revealed at Guess #3 and #5.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            Only cards released on the Global version are included for now.
+                        </p>
+
+                        <br>
+                        <hr>
+                        <br>
+
+                        <p><strong>Guess the Uma Musume</strong></p>
+                        <br>
                         <p>
                             You have <strong>6 attempts</strong> to guess the Uma Musume.
                             Skipping or submitting an incorrect guess reveals an
@@ -61,10 +81,12 @@ export async function initTopbar(config = {}) {
                         </p>
 
                         <br>
+                        <hr>
+                        <br>
 
                         <p>
                             <strong>Note:</strong> Only dailies count towards the Stats,
-                            and are stored locally.
+                            which are stored locally.
                         </p>
                     </div>
                 </div>

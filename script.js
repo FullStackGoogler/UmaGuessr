@@ -52,16 +52,31 @@ function getMsUntilMidnightEST() {
     return (86400 - secondsElapsed) * 1000;
 }
 
+// cyrb53 inspired
+function seededShuffle(arr, seed) {
+    const list = [...arr];
+    let s = seed;
+    for (let i = list.length - 1; i > 0; i--) {
+        s = Math.imul(s ^ (s >>> 15), 0x735a2d97);
+        s ^= s >>> 16;
+        const j = Math.abs(s) % (i + 1);
+        [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
+}
+
 function getDailyChar() {
     const key = getTodayKeyEST();
-    // Simple hash of the date string to pick a character index
-    let hash = 0;
-    for (let i = 0; i < key.length; i++) {
-        hash = ((hash << 5) - hash) + key.charCodeAt(i);
-        hash |= 0;
-    }
-    const idx = Math.abs(hash) % allChars.length;
-    return allChars[idx];
+
+    const startDate = new Date('2026-05-05T12:00:00Z');
+    const today = new Date(key + 'T12:00:00Z');
+    const daysSinceStart = Math.floor((today - startDate) / 86400000);
+
+    const cycle = Math.floor(daysSinceStart / allChars.length);
+    const dayInCycle = daysSinceStart % allChars.length;
+
+    const shuffled = seededShuffle(allChars, cycle + 1);
+    return shuffled[dayInCycle];
 }
 
 function checkDailyStatus() {

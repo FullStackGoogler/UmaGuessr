@@ -252,23 +252,37 @@ function renderClue(idx) {
         card.className = 'clue-card';
         
         if (racewearImg) {
-            card.innerHTML = `<div class="clue-label">Blurred Racewear</div>
-                <div class="blurred-img-wrap">
-                    <canvas id="racewear-canvas"></canvas>
-                </div>`;
-            container.appendChild(card);
+            // Check canvas filter support
+            const testCanvas = document.createElement('canvas');
+            const testCtx = testCanvas.getContext('2d');
+            const supportsCanvasFilter = typeof testCtx.filter === 'string';
 
-            const img = new Image();
-            img.crossOrigin = 'anonymous';
-            img.onload = () => {
-                const canvas = document.getElementById('racewear-canvas');
-                canvas.width = img.naturalWidth;
-                canvas.height = img.naturalHeight;
-                const ctx = canvas.getContext('2d');
-                ctx.filter = 'blur(18px) brightness(0.85)';
-                ctx.drawImage(img, 0, 0);
-            };
-            img.src = racewearImg;
+            if (supportsCanvasFilter) {
+                card.innerHTML = `<div class="clue-label">Blurred Racewear</div>
+                    <div class="blurred-img-wrap">
+                        <canvas id="racewear-canvas"></canvas>
+                    </div>`;
+                container.appendChild(card);
+
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.onload = () => {
+                    const canvas = document.getElementById('racewear-canvas');
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    const ctx = canvas.getContext('2d');
+                    ctx.filter = 'blur(18px) brightness(0.85)';
+                    ctx.drawImage(img, 0, 0);
+                };
+                img.src = racewearImg;
+            } else { // TODO: iOS fallback — CSS blur on img; Test with other browsers
+                card.innerHTML = `<div class="clue-label">Blurred Racewear</div>
+                    <div class="blurred-img-wrap">
+                        <img src="${racewearImg}" alt="blurred racewear" crossorigin="anonymous" />
+                    </div>`;
+                container.appendChild(card);
+
+            }
         } else {
             card.innerHTML = `<div class="clue-label">Blurred Racewear</div>
                 <div class="clue-content">No image available.</div>`;

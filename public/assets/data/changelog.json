@@ -1,5 +1,12 @@
 [
     {
+        "version": "1.2.1",
+        "date": "2026-05-23",
+        "changes": [
+            "Fixed an issue that prevented proper blurring of an Uma Musume's race attire on Safari."
+        ]
+    },
+    {
         "version": "1.2",
         "date": "2026-05-21",
         "changes": [

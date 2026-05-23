@@ -410,6 +410,16 @@ audio {
     border-radius: 10px;
 }
 
+.blurred-img-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 900px;
+    object-fit: cover;
+    object-position: center bottom;
+    filter: blur(18px) brightness(0.85);
+    display: block;
+}
+
 /* GUESS SECTION */
 .guess-section {
     margin-top: 1.5rem;

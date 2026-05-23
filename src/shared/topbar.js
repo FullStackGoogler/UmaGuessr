@@ -124,6 +124,7 @@ export async function initTopbar(config = {}) {
 
     initTheme();
     await loadChangelog();
+    await checkChangelog();
     wireTopbarListeners(config);
 
     if (showCountdown) {
@@ -159,6 +160,20 @@ async function loadChangelog() {
 function formatChangelogDate(dateStr) {
     const [y, m, d] = dateStr.split('-');
     return `${m}/${d}/${y}`;
+}
+
+async function checkChangelog() {
+    try {
+        const res = await fetch('/assets/data/changelog.json');
+        const changelog = await res.json();
+        const latestVersion = changelog[0].version;
+        const seenVersion = localStorage.getItem('umaguessr_version');
+
+        if (seenVersion !== latestVersion) {
+            openUpdates();
+            localStorage.setItem('umaguessr_version', latestVersion);
+        }
+    } catch (e) {}
 }
 
 // ─── STATS ──────────────────────────────────────────────────

@@ -303,7 +303,7 @@
     {
         "card_title": "Tracen Academy",
         "chara_id": 1056,
-        "chara_name": "That Trainer ID does not exist.",
+        "chara_name": "Matikanefukukitaru",
         "game_id": 10044,
         "typing": "Wit"
     },
@@ -653,7 +653,7 @@
     {
         "card_title": "Fate's Forecast",
         "chara_id": 1056,
-        "chara_name": "That Trainer ID does not exist.",
+        "chara_name": "Matikanefukukitaru",
         "game_id": 20016,
         "typing": "Wit"
     },
@@ -1346,7 +1346,7 @@
     {
         "card_title": "Touching Sleeves Is Good Luck! \u266a",
         "chara_id": 1056,
-        "chara_name": "That Trainer ID does not exist.",
+        "chara_name": "Matikanefukukitaru",
         "game_id": 30078,
         "typing": "Speed"
     },
@@ -1367,7 +1367,7 @@
     {
         "card_title": "Passing the Dream On",
         "chara_id": 1001,
-        "chara_name": "Special Week",
+        "chara_name": "Team Sirius",
         "game_id": 30081,
         "typing": "Group"
     },

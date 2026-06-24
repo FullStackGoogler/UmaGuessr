@@ -56,12 +56,16 @@ export async function initTopbar(config = {}) {
                         <p><strong><span class="howto-new">New!</span> Guess the Skill</strong></p>
                         <br>
                         <p>
-                            Text goes here.
+                            You have <strong>6 attempts</strong> to guess the  Skill. Letters are
+                            initially hidden and progressively get revealed with each guess. 
+                            Spaces, numbers, and special characters are always shown.
+                        </p>
+                        <br>
+                        <p>
+                            Currently includes skills released on Global as of <strong>May 18th, 2026</strong>.
                         </p>
 
-                        <br>
-                        <hr>
-                        <br>
+                        <br><hr><br>
 
                         <p><strong>Guess the Uma Musume</strong></p>
                         <br>
@@ -70,16 +74,16 @@ export async function initTopbar(config = {}) {
                             Skipping or submitting an incorrect guess reveals an
                             additional bit of information about the Uma.
                         </p>
-
                         <br>
-
                         <p>
                             NPCs and/or unreleased Uma Musume are not included.
                         </p>
+                        <br>
+                        <p>
+                            Currently updated up to <strong>Admire Groove (Original)</strong>.
+                        </p>
 
-                        <br>
-                        <hr>
-                        <br>
+                        <br><hr><br>
 
                         <p><strong>Guess the Support Card</strong></p>
                         <br>
@@ -88,16 +92,12 @@ export async function initTopbar(config = {}) {
                             Skipping or submitting an incorrect guess will un-pixelate the image.
                             Additional hints are revealed at Guess #3 and #5.
                         </p>
-
                         <br>
-
-                        <p>
-                            Only includes cards that are currently released on the Global version.
+                        <p> 
+                            Currently updated up to <strong>[Dear Mr. C.B.] Mr. C.B. (SSR Wit)</strong>.
                         </p>
 
-                        <br>
-                        <hr>
-                        <br>
+                        <br><hr><br>
 
                         <p>
                             <strong>Note:</strong> Only dailies count towards the Stats,

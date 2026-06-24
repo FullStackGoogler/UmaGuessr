@@ -53,6 +53,16 @@ export async function initTopbar(config = {}) {
                     <h2>How to Play</h2>
 
                     <div class="howto-content" id="howto-content">
+                        <p><strong><span class="howto-new">New!</span> Guess the Skill</strong></p>
+                        <br>
+                        <p>
+                            Text goes here.
+                        </p>
+
+                        <br>
+                        <hr>
+                        <br>
+
                         <p><strong>Guess the Uma Musume</strong></p>
                         <br>
                         <p>
@@ -113,6 +123,7 @@ export async function initTopbar(config = {}) {
                     <div class="stats-tabs">
                         <button class="stats-tab active" id="tab-uma">🐎 Uma Musume</button>
                         <button class="stats-tab" id="tab-support">🃏 Support Card</button>
+                        <button class="stats-tab" id="tab-skill">🎯 Skills</button>
                     </div>
                     <div id="stats-content"></div>
                 </div>
@@ -180,6 +191,7 @@ async function checkChangelog() {
 
 const UMA_STATS_KEY = 'umaguessr_uma_stats';
 const SUPPORT_STATS_KEY = 'umaguessr_support_stats';
+const SKILL_STATS_KEY = 'umaguessr_skill_stats';
  
 let activeStatsTab = 'uma';
  
@@ -240,10 +252,16 @@ function renderSupportStats() {
     const el = document.getElementById('stats-content');
     if (el) el.innerHTML = buildStatsHTML(loadStats(SUPPORT_STATS_KEY), 'No Support Card daily games played yet!');
 }
+
+function renderSkillStats() {
+    const el = document.getElementById('stats-content');
+    if (el) el.innerHTML = buildStatsHTML(loadStats(SKILL_STATS_KEY), 'No Skill daily games played yet!');
+}
  
 function openStats() {
     if (activeStatsTab === 'uma') renderUmaStats();
-    else renderSupportStats();
+    else if (activeStatsTab === 'support') renderSupportStats();
+    else renderSkillStats();
     document.getElementById('stats-modal').classList.add('open');
 }
  
@@ -293,13 +311,22 @@ function wireTopbarListeners(config) {
             activeStatsTab = 'uma';
             document.getElementById('tab-uma').classList.add('active');
             document.getElementById('tab-support').classList.remove('active');
+            document.getElementById('tab-skill').classList.remove('active');
             if (renderUmaStats) renderUmaStats();
         });
         document.getElementById('tab-support').addEventListener('click', () => {
             activeStatsTab = 'support';
             document.getElementById('tab-support').classList.add('active');
             document.getElementById('tab-uma').classList.remove('active');
+            document.getElementById('tab-skill').classList.remove('active');
             if (renderSupportStats) renderSupportStats();
+        });
+        document.getElementById('tab-skill').addEventListener('click', () => {
+            activeStatsTab = 'skill';
+            document.getElementById('tab-skill').classList.add('active');
+            document.getElementById('tab-uma').classList.remove('active');
+            document.getElementById('tab-support').classList.remove('active');
+            renderSkillStats();
         });
     }
 }

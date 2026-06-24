@@ -16,13 +16,20 @@ function getSupportDailySave() {
     } catch (e) { return null; }
 }
 
+function getSkillDailySave() {
+    try {
+        const raw = localStorage.getItem('umaguessr_skill_daily');
+        return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+}
+
 function checkDailyStatuses() {
     const key = getTodayKeyEST();
 
     const umaSave = getUmaDailySave();
     const umaBtn = document.getElementById('uma-daily-btn');
     if (umaSave && umaSave.dateKey === key) {
-        umaBtn.textContent = '🐎 Uma Musume Daily (Done ✓)';
+        umaBtn.textContent = '🐎 Uma Musume Daily ✓';
         umaBtn.classList.add('done');
     } else {
         umaBtn.textContent = '🐎 Uma Musume Daily';
@@ -32,11 +39,21 @@ function checkDailyStatuses() {
     const supportSave = getSupportDailySave();
     const supportBtn = document.getElementById('support-daily-btn');
     if (supportSave && supportSave.dateKey === key) {
-        supportBtn.textContent = '🃏 Support Card Daily (Done ✓)';
+        supportBtn.textContent = '🃏 Support Card Daily ✓';
         supportBtn.classList.add('done');
     } else {
         supportBtn.textContent = '🃏 Support Card Daily';
         supportBtn.classList.remove('done');
+    }
+
+    const skillSave = getSkillDailySave();
+    const skillBtn = document.getElementById('skill-daily-btn');
+    if (skillSave && skillSave.dateKey === key) {
+        skillBtn.textContent = '🎯 Skill Daily ✓';
+        skillBtn.classList.add('done');
+    } else {
+        skillBtn.textContent = '🎯 Skill Daily';
+        skillBtn.classList.remove('done');
     }
 }
 
@@ -49,10 +66,10 @@ function injectInfiniteModal() {
             <div class="modal modal-sm">
                 <button class="modal-close" id="close-infinite-btn">&#x2715;</button>
                 <h2>Infinite Mode</h2>
-                <p class="modal-subtitle">Which would you like to play?</p>
                 <div class="infinite-options">
                     <button class="btn-infinite-option" id="infinite-uma-btn">🐎 Uma Musume</button>
                     <button class="btn-infinite-option btn-infinite-support" id="infinite-support-btn">🃏 Support Card</button>
+                    <button class="btn-infinite-option btn-infinite-skill" id="infinite-skill-btn">🎯 Skill</button>
                 </div>
             </div>
         </div>
@@ -67,6 +84,9 @@ function injectInfiniteModal() {
     });
     document.getElementById('infinite-support-btn').addEventListener('click', () => {
         window.location.href = '/support.html?mode=infinite';
+    });
+    document.getElementById('infinite-skill-btn').addEventListener('click', () => {
+        window.location.href = '/skill.html?mode=infinite';
     });
 }
 
@@ -98,6 +118,9 @@ async function init() {
     });
     document.getElementById('support-daily-btn').addEventListener('click', () => {
         window.location.href = '/support.html';
+    });
+    document.getElementById('skill-daily-btn').addEventListener('click', () => {
+        window.location.href = '/skill.html';
     });
     document.getElementById('infinite-btn').addEventListener('click', openInfiniteModal);
 }

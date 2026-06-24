@@ -84,11 +84,13 @@ export function seededShuffle(arr, seed) {
 // Fuzzy Search
 export function normalize(str) {
     return str
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
         .toLowerCase()
-        .replace(/[.·•]/g, '')           // remove dots
-        .replace(/&/g, 'and')            // & → and
-        .replace(/['']/g, "'")           // curly apostrophes
-        .replace(/[^a-z0-9'\s]/g, '')   // strip remaining punctuation
+        .replace(/[.·•]/g, '')                         // remove dots
+        .replace(/&/g, 'and')                          // & → and
+        .replace(/['']/g, "'")                         // curly apostrophes
+        .replace(/[^a-z0-9'\s◎○×♡☆ﾟ∀∴∞♪]/g, '')     // strip remaining punctuation
         .replace(/\s+/g, ' ')
         .trim();
 }

@@ -18,6 +18,7 @@ let lastWonAttempt = -1;
 const MAX_ATTEMPTS = 6;
 const UMA_DAILY_KEY = 'umaguessr_uma_daily';
 const UMA_STATS_KEY = 'umaguessr_uma_stats';
+const UMA_START_DATE = '2026-05-05T12:00:00Z';
 
 // ─── DATA LOADING ──────────────────────────────────────────────────
 
@@ -101,13 +102,9 @@ function autoStart() {
 
 function getDailyUma() {
     const key = getTodayKeyEST();
-    const startDate = new Date('2026-05-05T12:00:00Z'); //TODO: May make more sense to refactor this out as a const
-    const today = new Date(key + 'T12:00:00Z');
-    const daysSinceStart = Math.floor((today - startDate) / 86400000);
-    const cycle = Math.floor(daysSinceStart / allChars.length);
-    const dayInCycle = daysSinceStart % allChars.length;
-    const shuffled = seededShuffle(allChars, cycle + 1);
-    return shuffled[dayInCycle];
+    const days = Math.floor((new Date(key + 'T12:00:00Z') - new Date(UMA_START_DATE)) / 86400000);
+    const shuffled = seededShuffle(allChars, Math.floor(days / allChars.length) + 1);
+    return shuffled[days % allChars.length];
 }
 
 function checkUmaDailyStatus() {
@@ -393,7 +390,9 @@ function showResult(correct, isReplay = false) {
     });
 
     const supportSave = getSupportDailySave();
+    const skillSave = getSkillDailySave();
     const supportDoneToday = supportSave && supportSave.dateKey === getTodayKeyEST();
+    const skillDoneToday = skillSave && skillSave.dateKey === getTodayKeyEST();
 
     const dailyFooterHTML = gameMode === 'daily' ? `
         <div class="result-countdown">
@@ -402,9 +401,8 @@ function showResult(correct, isReplay = false) {
         </div>
         <div class="result-actions">
             <button id="share-btn" class="btn-share">Share</button>
-            ${!supportDoneToday
-                ? `<button id="play-support-btn" class="btn-other-daily">🃏 Support Card Daily</button>`
-                : ''}
+            ${!supportDoneToday ? `<button id="play-support-btn" class="btn-other-daily">🃏 Support Card Daily</button>` : ''}
+            ${!skillDoneToday ? `<button id="play-skill-btn" class="btn-other-daily">🎯 Skill Daily</button>` : ''}
             <button id="play-infinite-btn" class="btn-other-daily">∞ Infinite Mode</button>
         </div>` : `
         <div class="result-actions">
@@ -434,9 +432,10 @@ function showResult(correct, isReplay = false) {
     if (shareBtn) shareBtn.addEventListener('click', shareResult);
 
     const playSupportBtn = document.getElementById('play-support-btn');
-    if (playSupportBtn) playSupportBtn.addEventListener('click', () => {
-        window.location.href = '/support.html';
-    });
+    if (playSupportBtn) playSupportBtn.addEventListener('click', () => { window.location.href = '/support.html'; });
+
+    const playSkillBtn = document.getElementById('play-skill-btn');
+    if (playSkillBtn) playSkillBtn.addEventListener('click', () => { window.location.href = '/skill.html'; });
 
     const playInfiniteBtn = document.getElementById('play-infinite-btn');
     if (playInfiniteBtn) playInfiniteBtn.addEventListener('click', () => { window.location.href = '/uma.html?mode=infinite'; });
@@ -449,21 +448,35 @@ function getSupportDailySave() {
     } catch (e) { return null; }
 }
 
+function getSkillDailySave() {
+    try {
+        const raw = localStorage.getItem('umaguessr_skill_daily');
+        return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+}
+
 // ─── SHARE ──────────────────────────────────────────────────
 
 function generateShareText() {
     const date = getTodayKeyEST().split('-').reverse().join('/').replace(/(\d+)\/(\d+)\/(\d+)/, '$2/$1/$3');
-    const umaRow = buildEmojiRow(lastWonAttempt, MAX_ATTEMPTS);
+    let umaLine = `\n🐎 ${buildEmojiRow(lastWonAttempt, MAX_ATTEMPTS)}`;
 
     const supportSave = getSupportDailySave();
+    const skillSave = getSkillDailySave();
     const supportDoneToday = supportSave && supportSave.dateKey === getTodayKeyEST();
+    const skillDoneToday = skillSave && skillSave.dateKey === getTodayKeyEST();
+
     let supportLine = '';
+    let skillLine = '';
+
     if (supportDoneToday) {
-        const supportRow = buildEmojiRow(supportSave.won ? supportSave.attemptNum : -1, MAX_ATTEMPTS);
-        supportLine = `\n🃏 ${supportRow}`;
+        supportLine = `\n🃏 ${buildEmojiRow(supportSave.won ? supportSave.attemptNum : -1, MAX_ATTEMPTS)}`;
+    }
+    if (skillDoneToday) {
+        skillLine = `\n🎯 ${buildEmojiRow(skillSave.won ? skillSave.attemptNum : -1, MAX_ATTEMPTS)}`;
     }
 
-    return `UmaGuessr ${date}\n🐎 ${umaRow}${supportLine}\n\nhttps://www.umaguessr.com`;
+    return `UmaGuessr ${date}${umaLine}${supportLine}${skillLine}\n\nhttps://www.umaguessr.com`;
 }
 
 async function shareResult() {

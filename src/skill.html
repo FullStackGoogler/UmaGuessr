@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UmaGuessr – Skill Daily</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/styles.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+<header></header>
+
+<div class="container">
+  <div id="loading" class="loading-msg">Loading skill data…</div>
+  <div id="error" class="error-msg" style="display:none"></div>
+
+  <div id="game-screen" style="display:none">
+    <div class="mode-badge skill-badge" id="mode-badge">🎯 Skill Daily</div>
+    <br>
+
+    <!-- Skill name with masked letters -->
+    <div class="clue-card skill-name-card">
+      <div class="clue-label">Skill Name</div>
+      <div class="skill-name-display" id="skill-name-display"></div>
+    </div>
+
+    <!-- Hints: icon and description -->
+    <div class="clue-card">
+      <div class="clue-row">
+        <div id="skill-icon-wrap"></div>
+        <div id="skill-desc-wrap"></div>
+      </div>
+    </div>
+
+    <div class="guess-section" id="guess-section">
+      <div class="progress-dots" id="progress-dots"></div>
+      <label>Your guess</label>
+      <div class="guess-wrap">
+        <input type="text" id="guess-input" placeholder="Type a skill name…" autocomplete="off" />
+        <div class="autocomplete-list" id="autocomplete-list"></div>
+      </div>
+      <div class="guess-feedback" id="guess-feedback"></div>
+      <div class="guess-actions">
+        <button class="btn-guess" id="guess-btn">Guess</button>
+        <button class="btn-skip" id="skip-btn">Skip</button>
+      </div>
+      <div class="wrong-guesses" id="wrong-guesses"></div>
+    </div>
+  </div>
+
+  <div id="result-screen" style="display:none">
+    <div class="result-card" id="result-card"></div>
+  </div>
+</div>
+
+<footer></footer>
+
+<script type="module" src="./js/skill-daily.js"></script>
+</body>
+</html>

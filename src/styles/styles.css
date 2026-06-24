@@ -209,7 +209,7 @@ footer a:hover {
     align-items: center;
     gap: 0.5rem;
     box-shadow: 0 4px 14px rgba(196, 85, 114, 0.3);
-    min-width: 240px;
+    min-width: 285px;
     justify-content: center;
 }
 
@@ -243,7 +243,7 @@ footer a:hover {
     font-weight: 500;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s, transform 0.1s;
-    min-width: 240px;
+    min-width: 285px;
 }
 
 .btn-infinite:hover {
@@ -1224,4 +1224,89 @@ audio {
 
 .theme-toggle input:checked ~ .theme-track .theme-thumb::after {
     content: '🌑';
+}
+
+.mode-badge.skill-badge {
+    display: inline-flex;
+    background: #f0f8e2;
+    color: #3b6d11;
+}
+
+[data-theme="dark"] .mode-badge.skill-badge {
+    background: #1a2810;
+    color: #97c459;
+}
+
+.btn-daily-skill {
+    background: linear-gradient(135deg, #7ab648, #4d8c1e);
+    box-shadow: 0 4px 14px rgba(77, 140, 30, 0.3);
+}
+
+.btn-daily-skill.done {
+    background: linear-gradient(135deg, #a8d5b5, #6bbf8c);
+    box-shadow: 0 4px 14px rgba(76, 175, 130, 0.25);
+}
+
+.skill-name-card {
+    text-align: center;
+}
+
+.skill-name-display {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    font-family: monospace;
+    margin-top: 0.5rem;
+    word-break: break-word;
+}
+
+.skill-icon-img {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin-top: 0.25rem;
+    image-rendering: pixelated;
+}
+
+.result-skill {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    align-items: flex-start;
+    border-top: 1px solid var(--border);
+}
+
+.result-skill-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+}
+
+.result-skill-info h3 {
+    font-family: 'Zen Maru Gothic', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.result-skill-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.result-mode-tag.skill-tag {
+    background: #f0f8e2;
+    color: #3b6d11;
+}
+
+[data-theme="dark"] .result-mode-tag.skill-tag {
+    background: #1a2810;
+    color: #97c459;
+}
+
+.btn-infinite-skill {
+    background: linear-gradient(135deg, #7ab648, #4d8c1e);
+    box-shadow: 0 4px 14px rgba(77, 140, 30, 0.3);
 }

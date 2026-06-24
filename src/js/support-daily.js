@@ -62,13 +62,9 @@ function autoStart() {
 
 function getDailySupportCard() {
     const key = getTodayKeyEST();
-    const startDate = new Date(SUPPORT_START_DATE);
-    const today = new Date(key + 'T12:00:00Z');
-    const daysSinceStart = Math.floor((today - startDate) / 86400000);
-    const cycle = Math.floor(daysSinceStart / allCards.length);
-    const dayInCycle = daysSinceStart % allCards.length;
-    const shuffled = seededShuffle(allCards, cycle + 1);
-    return shuffled[dayInCycle];
+    const days = Math.floor((new Date(key + 'T12:00:00Z') - new Date(SUPPORT_START_DATE)) / 86400000);
+    const shuffled = seededShuffle(allCards, Math.floor(days / allCards.length) + 1);
+    return shuffled[days % allCards.length];
 }
 
 function checkSupportDailyStatus() {
@@ -332,7 +328,9 @@ function showResult(correct, isReplay = false) {
         : `<div class="result-mode-tag infinite">∞ Infinite Mode</div>`;
 
     const umaSave = getUmaDailySave();
+    const skillSave = getSkillDailySave();
     const umaDoneToday = umaSave && umaSave.dateKey === getTodayKeyEST();
+    const skillDoneToday = skillSave && skillSave.dateKey === getTodayKeyEST();
 
     const dailyFooterHTML = gameMode === 'daily' ? `
         <div class="result-countdown">
@@ -341,9 +339,8 @@ function showResult(correct, isReplay = false) {
         </div>
         <div class="result-actions">
             <button id="share-btn" class="btn-share">Share</button>
-            ${!umaDoneToday
-                ? `<button id="play-uma-btn" class="btn-other-daily">🐎 Uma Musume Daily</button>`
-                : ''}
+            ${!umaDoneToday ? `<button id="play-uma-btn" class="btn-other-daily">🐎 Uma Musume Daily</button>` : ''}
+            ${!skillDoneToday ? `<button id="play-skill-btn" class="btn-other-daily">🎯 Skill Daily</button>` : ''}
             <button id="play-infinite-btn" class="btn-other-daily">∞ Infinite Mode</button>
         </div>` : `
         <div class="result-actions">
@@ -388,9 +385,10 @@ function showResult(correct, isReplay = false) {
     if (shareBtn) shareBtn.addEventListener('click', shareResult);
 
     const playUmaBtn = document.getElementById('play-uma-btn');
-    if (playUmaBtn) playUmaBtn.addEventListener('click', () => {
-        window.location.href = '/uma.html';
-    });
+    if (playUmaBtn) playUmaBtn.addEventListener('click', () => { window.location.href = '/uma.html'; });
+
+    const playSkillBtn = document.getElementById('play-skill-btn');
+    if (playSkillBtn) playSkillBtn.addEventListener('click', () => { window.location.href = '/skill.html'; });
 
     const playInfiniteBtn = document.getElementById('play-infinite-btn');
     if (playInfiniteBtn) playInfiniteBtn.addEventListener('click', () => { window.location.href = '/support.html?mode=infinite'; });
@@ -403,21 +401,35 @@ function getUmaDailySave() {
     } catch (e) { return null; }
 }
 
+function getSkillDailySave() {
+    try {
+        const raw = localStorage.getItem('umaguessr_skill_daily');
+        return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+}
+
 // ─── SHARE ──────────────────────────────────────────────────
 
 function generateShareText() {
     const date = getTodayKeyEST().split('-').reverse().join('/').replace(/(\d+)\/(\d+)\/(\d+)/, '$2/$1/$3');
-    const supportRow = buildEmojiRow(lastWonAttempt, MAX_ATTEMPTS);
+    let supportLine = `\n🃏 ${buildEmojiRow(lastWonAttempt, MAX_ATTEMPTS)}`;
 
     const umaSave = getUmaDailySave();
+    const skillSave = getSkillDailySave();
     const umaDoneToday = umaSave && umaSave.dateKey === getTodayKeyEST();
+    const skillDoneToday = skillSave && skillSave.dateKey === getTodayKeyEST();
+
     let umaLine = '';
+    let skillLine = '';
+
     if (umaDoneToday) {
-        const umaRow = buildEmojiRow(umaSave.won ? umaSave.attemptNum : -1, MAX_ATTEMPTS);
-        umaLine = `\n🐎 ${umaRow}`;
+        umaLine = `\n🐎 ${buildEmojiRow(umaSave.won ? umaSave.attemptNum : -1, MAX_ATTEMPTS)}`;
+    }
+    if (skillDoneToday) {
+        skillLine = `\n🎯 ${buildEmojiRow(skillSave.won ? skillSave.attemptNum : -1, MAX_ATTEMPTS)}`;
     }
 
-    return `UmaGuessr ${date}${umaLine}\n🃏 ${supportRow}\n\nhttps://www.umaguessr.com`;
+    return `UmaGuessr ${date}${umaLine}${supportLine}${skillLine}\n\nhttps://www.umaguessr.com`;
 }
 
 async function shareResult() {

@@ -192,7 +192,7 @@ function renderHints() {
     if (attempt >= 2) {
         iconWrap.innerHTML = `
             <div class="clue-label">Skill Icon</div>
-            <img src="/assets/skill_icons/${currentSkill.icon_id}.png"
+            <img src="https://assets.umaguessr.com/skill-icons/${currentSkill.icon_id}.png"
                  alt="${currentSkill.icon_id}" class="skill-icon-img" />
         `;
     } else {
@@ -342,7 +342,7 @@ function showResult(correct, isReplay = false) {
             <p>${bannerSub}</p>
         </div>
         <div class="result-skill">
-            <img src="/assets/skill_icons/${currentSkill.icon_id}.png"
+            <img src="https://assets.umaguessr.com/skill-icons/${currentSkill.icon_id}.png"
                  alt="${currentSkill.skill_name}" class="result-skill-icon" />
             <div class="result-skill-info">
                 <h3>${currentSkill.skill_name}</h3>

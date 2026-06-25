@@ -58,7 +58,8 @@ export async function initTopbar(config = {}) {
                         <p>
                             You have <strong>6 attempts</strong> to guess the  Skill. Letters are
                             initially hidden and progressively get revealed with each guess. 
-                            Spaces, numbers, and special characters are always shown.
+                            Spaces, numbers, and special characters are always shown. Additional hints
+                            are revealed at Guess #3 and #5.
                         </p>
                         <br>
                         <p>
